@@ -26,8 +26,8 @@
       <div class="col-sm-3"></div>
 
       <!-- BUTTONS FOR DIE TYPE SELECTION -->
-      <div class="col-sm-2">
-        <div class="btn-group-vertical" id="dice-row" role="group" aria-label="First group">
+      <div id = "dice-row-container" class="col-sm-2">
+        <div class="btn-group-vertical float-right" id="dice-row" role="group" aria-label="First group">
           <button type="button" id='d4' class="btn btn-secondary">d4</button>
           <button type="button" id='d6' class="btn btn-secondary">d6</button>
           <button type="button" id='d8' class="btn btn-secondary">d8</button>
@@ -290,9 +290,13 @@
       if (windowWidth > wideScreen) {
         document.getElementById('dice-row').classList.add('btn-group-vertical')
         document.getElementById('dice-row').classList.remove('btn-group');
+        document.getElementById('dice-row').classList.add('float-right')
+        document.getElementById('dice-row').classList.remove('float-left');
       } else {
         document.getElementById('dice-row').classList.add('btn-group')
         document.getElementById('dice-row').classList.remove('btn-group-vertical');
+        document.getElementById('dice-row').classList.add('float-left')
+        document.getElementById('dice-row').classList.remove('float-right');
       }
 
     }
