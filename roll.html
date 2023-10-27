@@ -40,7 +40,7 @@
     <div id="placeholder">
     0
     </div>
-    <button type="button" id = "roll-button" class="btn btn-primary">Roll Dice</button>
+    <button type="button" id = "roll-button" class="btn btn-primary"> < Pick a Die Size</button>
   </div>
   
   <!-- CHOOSE NUMBER OF DICE -->
@@ -58,9 +58,9 @@
                 <span class="glyphicon glyphicon-minus"> - </span>
               </button>
           </span>
-
-          <input type="text" id = "quantity" name="input-count" class="form-control input-number" value="10" min="1" max="20">
-
+          <form id = "form">
+          <input type="text" id = "quantity" name="input-count" class="form-control input-number" value="1" min="1" max="20">
+        </form>
           <span class="input-group-btn">
               <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="input-count">
                   <span class="glyphicon glyphicon-plus"> + </span>
@@ -78,8 +78,10 @@
 
   <script>
 
+    document.getElementById("form").reset();
+
     let dice = {
-    sides: -1,
+    sides: 1,
     count: 1,
 
   roll: function () {
@@ -128,36 +130,43 @@ function buttonHighlight(clicked){
 
 }
 
+var rollButton = document.getElementById('roll-button');
 
 var d4 = document.getElementById('d4');
 d4.onclick= function() {
   dice.sides = 4;
   buttonHighlight(d4);
+  rollButton.innerHTML = "Roll " + dice.count + " d4";
 };
 var d6 = document.getElementById('d6');
 d6.onclick= function() {
   dice.sides = 6;
   buttonHighlight(d6);
+rollButton.innerHTML = "Roll " + dice.count + " d6";
 };
 var d8 = document.getElementById('d8');
 d8.onclick= function() {
   dice.sides = 8;
   buttonHighlight(d8);
+  rollButton.innerHTML = "Roll " + dice.count + " d8";
 };
 var d12 = document.getElementById('d12');
 d12.onclick= function() {
   dice.sides = 12;
   buttonHighlight(d12);
+  rollButton.innerHTML = "Roll " + dice.count + " d12";
 };
 var d20 = document.getElementById('d20');
 d20.onclick= function() {
   dice.sides = 20;
   buttonHighlight(d20);
+  rollButton.innerHTML = "Roll " + dice.count + " d20";
 };
 var d100 = document.getElementById('d100');
 d100.onclick= function() {
   dice.sides = 100;
   buttonHighlight(d100);
+  rollButton.innerHTML = "Roll " + dice.count + " d100";
 };
 
 
@@ -165,28 +174,39 @@ d100.onclick= function() {
 
 $('.btn-number').click(function(e){
     e.preventDefault();
-    
+
     fieldName = $(this).attr('data-field');
     type      = $(this).attr('data-type');
     var input = $("input[name='"+fieldName+"']");
     var currentVal = parseInt(input.val());
     if (!isNaN(currentVal)) {
+
+      
+      
+
+
         if(type == 'minus') {
             
             if(currentVal > input.attr('min')) {
                 input.val(currentVal - 1).change();
+                dice.count = currentVal -1 ;
+                rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
             } 
             if(parseInt(input.val()) == input.attr('min')) {
                 $(this).attr('disabled', true);
+               
             }
 
         } else if(type == 'plus') {
 
             if(currentVal < input.attr('max')) {
                 input.val(currentVal + 1).change();
+                dice.count = currentVal+1;
+                rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
             }
             if(parseInt(input.val()) == input.attr('max')) {
                 $(this).attr('disabled', true);
+           
             }
 
         }
@@ -216,7 +236,6 @@ $('.input-number').change(function() {
         alert('Sorry, the maximum value was reached');
         $(this).val($(this).data('oldValue'));
     }
-    
     
 });
 $(".input-number").keydown(function (e) {
