@@ -36,7 +36,7 @@
   <!-- ROLL BUTTON AND OUTPUT OF ROLL -->
   <div class="col-sm">
     <p id="placeholder">
-      ?
+     < Select a die size
     </p>
     <button type="button" id = "roll-button" class="btn btn-primary">Roll Dice</button>
   </div>
@@ -46,18 +46,7 @@
   <div class="center">
     <p>
       </p>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-      
+                                      
     <p></p>
     <p>
       </p><div class="input-group">
@@ -107,8 +96,13 @@
     count: 1,
 
   roll: function () {
-    var randomNumber = (Math.floor(Math.random() * this.sides) + 1) * this.count;
-    return randomNumber;
+
+    let sum = 0;
+    for( i = 0; i < this.count; i++){
+    var randomNumber = (Math.floor(Math.random() * this.sides) + 1);
+      sum += randomNumber;
+    }
+    return sum;
   }
 
 }
