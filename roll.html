@@ -124,6 +124,9 @@ rollButton.onclick = function() {
 
 function buttonHighlight(clicked){
 
+  let number = document.getElementById("placeholder");
+  number.innerHTML = 0;
+
   let buttons = document.getElementsByClassName("btn-secondary");
 
   console.log(buttons);
