@@ -50,6 +50,7 @@ body{
 #dice-row{
   margin-top:1rem;
   margin-left: 1rem;
+  margin-right: 1rem;
   
   
 }
@@ -60,7 +61,14 @@ body{
 .input-group{
   width: 12rem;
 }
+#result-container{
+  background-color: darkgrey;
+  min-width: 18rem;
+}
+#dice-row-container{
+  background-color: darkgrey;
 
+}
 
 
 
