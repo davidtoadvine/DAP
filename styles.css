@@ -22,3 +22,22 @@
   /* border-radius: 10px;   */
   /* font-size:80px; */
 /* } */
+.container{
+  margin-top: 2rem;
+}
+body{
+  background-color: rgb(158, 140, 140);
+}
+#placeholder{
+  background-color: seashell;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  height: 8rem;
+  width: 10rem;
+  font-size: 4rem;
+  text-align: center;
+  
+}
+#roll-button{
+  width: 10rem;
+}
