@@ -236,14 +236,19 @@ $('.input-number').change(function() {
         // rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
     } else {
         alert('Sorry, the minimum value was reached');
-        $(this).val((1));
+        $(this).val(1);
         dice.count = 1;
     }
-    if(valueCurrent <= maxValue) {
+    if(valueCurrent <= maxValue && valueCurrent > 0) {
         $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
          dice.count = valueCurrent;
         // rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
-    } else {
+    }
+    else if(valueCurrent <= maxValue) {
+    $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+     dice.count = 1;
+     } 
+     else {
         alert('Sorry, the maximum value was reached');
         $(this).val(20);
         dice.count = 20;
