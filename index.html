@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="row">
+
+
+  <div class="col-sm">
+      <div class="btn-group-vertical" role="group" aria-label="First group">
+        <button type="button" id = 'd4' class="btn btn-secondary">d4</button>
+        <button type="button" id = 'd6' class="btn btn-secondary">d6</button>
+        <button type="button" id = 'd8' class="btn btn-secondary">d8</button>
+        <button type="button" id = 'd12' class="btn btn-secondary">d12</button>
+        <button type="button" id = 'd20' class="btn btn-secondary">d20</button>
+        <button type="button" id = 'd100' class="btn btn-secondary">d100</button>
+      </div>
+  </div>
+
+  <div class="col-sm">
+    <p id="placeholder">
+      ?
+    </p>
+    <button type="button" id = "roll-button" class="btn btn-primary">Roll Dice</button>
+  
+  </div>
+  
+  <div class="col-sm">
+    <div class="btn-group-vertical" role="group" aria-label="First group">
+      <button type="button" class="btn btn-secondary">1</button>
+      <button type="button" class="btn btn-secondary">2</button>
+      <button type="button" class="btn btn-secondary">3</button>
+      <button type="button" class="btn btn-secondary">4</button>
+      <button type="button" class="btn btn-secondary">5</button>
+      <button type="button" class="btn btn-secondary">6</button>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+
+
+  <script>
+
+    let dice = {
+    sides: -1,
+    count: 1,
+
+  roll: function () {
+    var randomNumber = (Math.floor(Math.random() * this.sides) + 1) * this.count;
+    return randomNumber;
+  }
+
+}
+
+
+
+//Prints dice roll to the page
+
+function printNumber(number) {
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var rollButton = document.getElementById('roll-button');
+
+rollButton.onclick = function() {
+
+  var result = dice.roll();
+  printNumber(result);
+};
+
+
+var d4 = document.getElementById('d4');
+d4.onclick= function() {
+  dice.sides = 4;
+};
+var d6 = document.getElementById('d6');
+d6.onclick= function() {
+  dice.sides = 6;
+};
+var d8 = document.getElementById('d8');
+d8.onclick= function() {
+  dice.sides = 8;
+};
+var d12 = document.getElementById('d12');
+d12.onclick= function() {
+  dice.sides = 12;
+};
+var d20 = document.getElementById('d20');
+d20.onclick= function() {
+  dice.sides = 20;
+};
+var d100 = document.getElementById('d100');
+d100.onclick= function() {
+  dice.sides = 100;
+};
+
+
+
+
+
+  </script>
+
+    
+
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
