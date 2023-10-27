@@ -20,11 +20,13 @@
 
 <body>
 
+
   <div class="container">
     <div class="row">
+      <div class="col-sm-3 col-xs-12"></div>
 
 <!-- BUTTONS FOR DIE TYPE SELECTION -->
-  <div class="col-sm">
+  <div class="col-sm-2">
       <div class="btn-group-vertical" role="group" aria-label="First group">
         <button type="button" id = 'd4' class="btn btn-secondary">d4</button>
         <button type="button" id = 'd6' class="btn btn-secondary">d6</button>
@@ -36,39 +38,42 @@
   </div>
 
   <!-- ROLL BUTTON AND OUTPUT OF ROLL -->
-  <div class="col-sm">
+  <div class="col-sm-3 col-xs-12">
     <div id="placeholder">
     0
     </div>
     <button type="button" id = "roll-button" class="btn btn-primary"> < Pick a Die Size</button>
-  </div>
-  
-  <!-- CHOOSE NUMBER OF DICE -->
 
-  <div class="center">
-    <p>
-      </p>
-                                      
-    <p></p>
-    <p>
-      </p><div class="input-group">
 
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="input-count">
-                <span class="glyphicon glyphicon-minus"> - </span>
-              </button>
-          </span>
-          <form id = "form">
-          <input type="text" id = "quantity" name="input-count" class="form-control input-number" value="1" min="1" max="20">
-        </form>
-          <span class="input-group-btn">
-              <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="input-count">
-                  <span class="glyphicon glyphicon-plus"> + </span>
-              </button>
-          </span>
-      </div>
-	<p></p>
+
+<!-- CHOOSE NUMBER OF DICE -->
+<div class="center">
+  <p>
+    </p>
+                                    
+  <p></p>
+  <p>
+    </p><div class="input-group">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="input-count">
+              <span class="glyphicon glyphicon-minus"> - </span>
+            </button>
+        </span>
+        <form id = "form">
+        <input type="text" id = "quantity" name="input-count" class="form-control input-number" value="1" min="1" max="20">
+      </form>
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="input-count">
+                <span class="glyphicon glyphicon-plus"> + </span>
+            </button>
+        </span>
+    </div>
+<p></p>
 </div>
+
+
+
+  </div>
 
 </div>
 
@@ -87,6 +92,7 @@
   roll: function () {
 
     let sum = 0;
+    let dicearray = [];
     for( i = 0; i < this.count; i++){
     var randomNumber = (Math.floor(Math.random() * this.sides) + 1);
       sum += randomNumber;
@@ -226,16 +232,24 @@ $('.input-number').change(function() {
     name = $(this).attr('name');
     if(valueCurrent >= minValue) {
         $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+         dice.count = valueCurrent;
+        // rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
     } else {
         alert('Sorry, the minimum value was reached');
-        $(this).val($(this).data('oldValue'));
+        $(this).val((1));
+        dice.count = 1;
     }
     if(valueCurrent <= maxValue) {
         $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+         dice.count = valueCurrent;
+        // rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
     } else {
         alert('Sorry, the maximum value was reached');
-        $(this).val($(this).data('oldValue'));
+        $(this).val(20);
+        dice.count = 20;
     }
+   
+    rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
     
 });
 $(".input-number").keydown(function (e) {
