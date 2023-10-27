@@ -26,7 +26,7 @@
       <div class="col-sm-3"></div>
 
       <!-- BUTTONS FOR DIE TYPE SELECTION -->
-      <div id = "dice-row-container" class="col-sm-2">
+      <div id = "dice-row-container" class="col-xs-12">
         <div class="btn-group-vertical float-right" id="dice-row" role="group" aria-label="First group">
           <button type="button" id='d4' class="btn btn-secondary">d4</button>
           <button type="button" id='d6' class="btn btn-secondary">d6</button>
@@ -44,7 +44,7 @@
           0
         </div>
         <button type="button" id="roll-button" class="btn btn-primary">
-          < Pick a Die Size</button>
+          Choose a Die Size</button>
 
 
 
@@ -149,37 +149,37 @@
     d4.onclick = function () {
       dice.sides = 4;
       buttonHighlight(d4);
-      rollButton.innerHTML = "Roll " + dice.count + " d4";
+      rollButton.innerHTML = "Roll " + dice.count + "d4";
     };
     var d6 = document.getElementById('d6');
     d6.onclick = function () {
       dice.sides = 6;
       buttonHighlight(d6);
-      rollButton.innerHTML = "Roll " + dice.count + " d6";
+      rollButton.innerHTML = "Roll " + dice.count + "d6";
     };
     var d8 = document.getElementById('d8');
     d8.onclick = function () {
       dice.sides = 8;
       buttonHighlight(d8);
-      rollButton.innerHTML = "Roll " + dice.count + " d8";
+      rollButton.innerHTML = "Roll " + dice.count + "d8";
     };
     var d12 = document.getElementById('d12');
     d12.onclick = function () {
       dice.sides = 12;
       buttonHighlight(d12);
-      rollButton.innerHTML = "Roll " + dice.count + " d12";
+      rollButton.innerHTML = "Roll " + dice.count + "d12";
     };
     var d20 = document.getElementById('d20');
     d20.onclick = function () {
       dice.sides = 20;
       buttonHighlight(d20);
-      rollButton.innerHTML = "Roll " + dice.count + " d20";
+      rollButton.innerHTML = "Roll " + dice.count + "d20";
     };
     var d100 = document.getElementById('d100');
     d100.onclick = function () {
       dice.sides = 100;
       buttonHighlight(d100);
-      rollButton.innerHTML = "Roll " + dice.count + " d100";
+      rollButton.innerHTML = "Roll " + dice.count + "d100";
     };
 
 
@@ -290,13 +290,13 @@
       if (windowWidth > wideScreen) {
         document.getElementById('dice-row').classList.add('btn-group-vertical')
         document.getElementById('dice-row').classList.remove('btn-group');
-        document.getElementById('dice-row').classList.add('float-right')
-        document.getElementById('dice-row').classList.remove('float-left');
+        // document.getElementById('dice-row').classList.add('float-right')
+        // document.getElementById('dice-row').classList.remove('float-left');
       } else {
         document.getElementById('dice-row').classList.add('btn-group')
         document.getElementById('dice-row').classList.remove('btn-group-vertical');
-        document.getElementById('dice-row').classList.add('float-left')
-        document.getElementById('dice-row').classList.remove('float-right');
+        // document.getElementById('dice-row').classList.add('float-left')
+        // document.getElementById('dice-row').classList.remove('float-right');
       }
 
     }
