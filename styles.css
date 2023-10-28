@@ -24,6 +24,8 @@
 /* } */
 
 
+#result-container{
+}
 .container{
   margin-top: 2rem;
   margin-left: 2rem;
@@ -45,6 +47,10 @@ body{
   font-size: 4rem;
   text-align: center;
   padding-top: .5rem;
+
+  border: solid;
+border-color: rgb(177, 138, 40);
+border-radius: .5rem;
   
   
 }
@@ -66,22 +72,42 @@ body{
   width: 12rem;
 }
 #result-container{
-  background-color: darkgrey;
+  /* background-color: darkgrey; */
+  background-image: url('/paneling.jpg');
   min-width: 18rem;
+ 
+ 
+  border: solid;
+  border-color: rgb(177, 138, 40);
+  border-radius: .5rem;
 }
 #dice-row-container{
-  background-color: darkgrey;
+  /* background-color: darkgrey; */
+  background-image: url('/paneling.jpg');
+
+
+  border: solid;
+  border-color: rgb(177, 138, 40);
+  border-radius: .5rem;
 
 }
 
 .card{
   
+
+  border: solid;
+  border-color: rgb(177, 138, 40);
+  border-radius: .5rem;
+
   height: 450px;
 }
 .card-img-top{
   
   height: 200px;
   width: 200px;
+}
+.card-body{
+  
 }
 
 
