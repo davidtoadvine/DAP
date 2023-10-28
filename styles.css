@@ -91,9 +91,17 @@ border-radius: .5rem;
   margin: 20px 0;
   outline: none;
   border-radius: 5px;
+ 
+}
+.input-box img{
+  height: 40px;
+  width: 40px;
+  position:absolute;
+  bottom:15px;
+  right: 15px;
+  cursor: pointer;
   
 }
-
 
 
 
