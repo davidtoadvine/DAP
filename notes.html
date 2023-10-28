@@ -59,5 +59,36 @@
     </div>
   </nav>
 </header>
+
+<main>
+<div class="container">
+  <h1>Notes</h1>
+  <button class="note-btn">  Create Note </button>
+  <div class="notes-container">
+<p>STATIC PARAGRAPH</p>
+  </div>
+</div>
+</main>
+
+<script>
+  const notesContainer = document.querySelector(".notes-container");
+  const createButton = document.querySelector(".note-btn");
+  let notes = document.querySelectorAll(".input-box");
+  
+  console.log(createButton.innerHTML);
+
+  function test(){
+    console.log('clicked');
+  }
+  createButton.addEventListener("click", (e)=>{
+  
+  
+    console.log('pressed');
+    let inputBox = document.createElement("p");
+    inputBox.className="input-box";
+    inputBox.setAttribute("contenteditable", "true");
+    notesContainer.appendChild(inputBox);
+     });
+</script>
 </body>
 </html>
