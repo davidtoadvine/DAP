@@ -26,9 +26,13 @@
 
 .container{
   margin-top: 2rem;
+  margin-left: 2rem;
 }
 body{
-  background-color: rgb(158, 140, 140);
+  background-color: rgb(59, 55, 55);
+  background-repeat: no-repeat;
+  background-image: url('/tavern.jpg');
+  
 }
 #placeholder{
   background-color: seashell;
@@ -68,6 +72,16 @@ body{
 #dice-row-container{
   background-color: darkgrey;
 
+}
+
+.card{
+  
+  height: 450px;
+}
+.card-img-top{
+  
+  height: 200px;
+  width: 200px;
 }
 
 
