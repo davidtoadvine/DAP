@@ -1,0 +1,35 @@
+
+body{
+  color:yellow;
+}
+.container{
+  background-color: gray;
+}
+
+p{
+
+}
+#form{
+  min-width: 3rem;
+  max-width: 3rem;
+
+
+}
+
+body{
+  text-align: right;
+
+}
+.input-group{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+
