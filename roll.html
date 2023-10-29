@@ -23,7 +23,8 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,40 +33,53 @@
             <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="roll.html">Dice</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="notes.html">Notes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="library.html">Archives</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="misc.html">Misc.</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
               Dropdown
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+          
+          
+          
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        
+        
+        
+        
       </div>
     </div>
   </nav>
 </header>
   <div class="container">
-    <div class="row">
 
-      <div class="col-sm-3">
+    <div class="row" id="switcher">
+
+      <div class="col-sm-3" id="buffer1">
 
       </div>
 
       <!-- BUTTONS FOR DIE TYPE SELECTION -->
-      <div id = "dice-row-container" class="col-xs-12">
+      <div id = "dice-row-container" class="">
         <div class="btn-group-vertical float-right" id="dice-row" role="group" aria-label="First group">
           <button type="button" id='d4' class="btn btn-secondary">d4</button>
           <button type="button" id='d6' class="btn btn-secondary">d6</button>
@@ -119,6 +133,9 @@
 
 
 
+          </div>
+
+          <div class="col-sm-3" id = "buffer2">
           </div>
 
     </div>
@@ -324,7 +341,7 @@
 
 
 
-    var wideScreen = 575;
+    var wideScreen = 800;
 
     var toggleBtnDirection = function () {
       var windowWidth = $(window).width();
@@ -332,16 +349,39 @@
       if (windowWidth > wideScreen) {
         document.getElementById('dice-row').classList.add('btn-group-vertical')
         document.getElementById('dice-row').classList.remove('btn-group');
+
+        document.getElementById('switcher').classList.add('row');
+        document.getElementById('switcher').classList.remove('col');
+
+        document.getElementById('dice-row-container').classList.remove('row');
+document.getElementById('result-container').classList.remove('shifted');
+
+        // document.getElementById('buffer1').classList.add('col-sm-3');
+        // document.getElementById('buffer2').classList.remove('row');
+
         // document.getElementById('dice-row').classList.add('float-right')
         // document.getElementById('dice-row').classList.remove('float-left');
       } else {
         document.getElementById('dice-row').classList.add('btn-group')
         document.getElementById('dice-row').classList.remove('btn-group-vertical');
+
+        document.getElementById('switcher').classList.add('col');
+        document.getElementById('switcher').classList.remove('row');
+
+        document.getElementById('dice-row-container').classList.add('row');
+        document.getElementById('result-container').classList.add('shifted');
+
+
+        // document.getElementById('buffer1').classList.add('row');
+        // document.getElementById('buffer2').classList.remove('col-sm-3');
+
         // document.getElementById('dice-row').classList.add('float-left')
         // document.getElementById('dice-row').classList.remove('float-right');
       }
 
     }
+
+
     
 
     toggleBtnDirection();
