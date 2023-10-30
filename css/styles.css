@@ -11,7 +11,7 @@
 body{
   background-color: rgb(59, 55, 55);
   background-repeat: no-repeat;
-  background-image: url('/tavern.jpg');
+  background-image: url('../images/tavern.jpg');
   background-attachment: fixed;
   
 
@@ -116,8 +116,23 @@ border-radius: .5rem;
 p{
   word-wrap: break-word;
 }
-
+/* ////////////////////////////////////////////////// */
 .shifted{
   margin-left: -15px;
 }
+@media (max-width:600px){
+  .input-box{
+    max-width: 400px;}
+  }
 
+@media (max-width:500px){
+  .input-box{
+    max-width: 300px;
+  }
+
+  
+  
+  
+  
+  
+}

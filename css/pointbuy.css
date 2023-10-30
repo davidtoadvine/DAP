@@ -87,7 +87,7 @@ table{
     justify-content: center;
   }
   #score-header{ 
-    left:1rem;
+    left:0rem;
 }
 table{
   margin-left: 1rem;
