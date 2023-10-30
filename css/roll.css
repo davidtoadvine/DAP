@@ -1,0 +1,60 @@
+/* ROLLER */
+#placeholder{
+  background-color: seashell;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  margin-top:1rem;
+  
+  height: 8rem;
+  width: 10rem;
+  font-size: 4rem;
+  text-align: center;
+  padding-top: .5rem;
+
+  border: solid;
+border-color: rgb(177, 138, 40);
+border-radius: .5rem;
+}
+#roll-button{
+  width: 10rem;
+}
+#dice-row{
+  margin: 1.5rem;
+}
+#form{
+  width:6rem;
+  min-width: 6rem;
+}
+.input-group{
+  width: 12rem;
+}
+#result-container{
+  /* background-color: darkgrey; */
+  background-image: url('../images/paneling.jpg');
+  min-width: 350px;
+  max-width: 350px;
+
+
+  border: solid;
+  border-color: rgb(177, 138, 40);
+  border-radius: .5rem;
+}
+#dice-row-container{
+  /* background-color: darkgrey; */
+  background-image: url('../images/paneling.jpg');
+
+
+  border: solid;
+  border-color: rgb(177, 138, 40);
+  border-radius: .5rem;
+  max-width: 350px;
+
+}
+.shifted {
+  margin-left: -15px;
+}
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////////////////// */

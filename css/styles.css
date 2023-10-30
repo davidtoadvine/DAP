@@ -1,138 +1,17 @@
 
-#report{
-  padding-left: 5rem;
-}
-#result-container{
-}
-.container{
+
+.container {
   margin-top: 2rem;
   margin-left: 2rem;
 }
-body{
+
+
+
+body {
   background-color: rgb(59, 55, 55);
   background-repeat: no-repeat;
   background-image: url('../images/tavern.jpg');
   background-attachment: fixed;
-  
-
-
-  
-}
-#placeholder{
-  background-color: seashell;
-  margin-bottom: 1rem;
-  margin-right: 2rem;
-  margin-top:1rem;
-  
-  height: 8rem;
-  width: 10rem;
-  font-size: 4rem;
-  text-align: center;
-  padding-top: .5rem;
-
-  border: solid;
-border-color: rgb(177, 138, 40);
-border-radius: .5rem;
-  
-  
-}
-#roll-button{
-  width: 10rem;
-}
-#dice-row{
-  margin: 1.5rem;
-}
-#form{
-  width:6rem;
-  min-width: 6rem;
-}
-.input-group{
-  width: 12rem;
-}
-#result-container{
-  /* background-color: darkgrey; */
-  background-image: url('/paneling.jpg');
-  min-width: 350px;
-  max-width: 350px;
- 
- 
-  border: solid;
-  border-color: rgb(177, 138, 40);
-  border-radius: .5rem;
-}
-#dice-row-container{
-  /* background-color: darkgrey; */
-  background-image: url('/paneling.jpg');
-
-
-  border: solid;
-  border-color: rgb(177, 138, 40);
-  border-radius: .5rem;
-  max-width: 350px;
-
 }
 
-.card{
-  background-color: #beb6b6;
 
-  border: solid;
-  border-color: rgb(177, 138, 40);
-  border-radius: .5rem;
-
-  height: 450px;
-
-  min-width: 16rem;
-  
-}
-.card-img-top{
-  display:block;
-  padding-top: 1rem;
-  height: 200px;
-  width: 200px;
-}
-.input-box{
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  min-height: 150px;
-  background: #fff;
-  color: #333;
-  padding: 20px;
-  margin: 20px 0;
-  outline: none;
-  border-radius: 5px;
-
-}
-.input-box img{
-  height: 40px;
-  width: 40px;
-  position:absolute;
-  bottom:0px;
-  right: -45px;
-  cursor: pointer;
-  
-}
-
-p{
-  word-wrap: break-word;
-}
-/* ////////////////////////////////////////////////// */
-.shifted{
-  margin-left: -15px;
-}
-@media (max-width:600px){
-  .input-box{
-    max-width: 400px;}
-  }
-
-@media (max-width:500px){
-  .input-box{
-    max-width: 300px;
-  }
-
-  
-  
-  
-  
-  
-}

@@ -1,9 +1,12 @@
 
 body{
   color:yellow;
+  text-align: right;
 }
 .container{
   background-color: gray;
+  display: block;
+min-width: 40rem;
 }
 
 p{
@@ -16,21 +19,13 @@ p{
 
 }
 
-body{
-  text-align: right;
 
-}
 .input-group{
   display: flex;
   justify-content: flex-end;
 }
 .col-2{
   min-width: 8rem;
-}
-.container{
-  display: block;
-  min-width: 40rem;
- 
 }
 
 
