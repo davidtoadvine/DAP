@@ -1,23 +1,21 @@
 
 body{
-  color:yellow;
+  
   text-align: right;
 }
+h1{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+
 .container{
   background-color: gray;
   display: block;
 min-width: 40rem;
 }
 
-p{
-
-}
-#form{
-  min-width: 3rem;
-  max-width: 3rem;
-
-
-}
 
 
 .input-group{
@@ -88,4 +86,9 @@ table{
   margin-left: 1rem;
 }
 
+}
+
+.form{
+  width:3rem;
+  min-width: 3rem;
 }

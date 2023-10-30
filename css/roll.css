@@ -21,13 +21,14 @@ border-radius: .5rem;
 #dice-row{
   margin: 1.5rem;
 }
-#form{
-  width:6rem;
-  min-width: 6rem;
-}
-.input-group{
-  width: 12rem;
-}
+
+
+
+
+
+
+
+
 #result-container{
   /* background-color: darkgrey; */
   background-image: url('../images/paneling.jpg');
@@ -53,6 +54,9 @@ border-radius: .5rem;
 .shifted {
   margin-left: -15px;
 }
+
+
+
 
 
 

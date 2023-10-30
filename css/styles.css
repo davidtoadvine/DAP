@@ -5,13 +5,30 @@
   margin-left: 2rem;
 }
 
-
-
 body {
   background-color: rgb(59, 55, 55);
   background-repeat: no-repeat;
   background-image: url('../images/tavern.jpg');
   background-attachment: fixed;
+
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+h1{
+  color:yellow;
+  padding-left: 3rem;
+  text-align: left;
+}
+p{
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
+/* this prob only applies to roll */
+#form{
+  width:6rem;
+  min-width: 6rem;
+}
+
+.input-group{
+  width: 12rem;
+}
