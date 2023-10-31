@@ -23,6 +23,8 @@
 p {
   word-wrap: break-word;
 }
+
+/* These media queries keep the notes at an appropriate width for the screen. */
 @media (max-width:600px){
   .input-box{
     max-width: 400px;}

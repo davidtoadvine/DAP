@@ -8,7 +8,7 @@
 body {
   background-color: rgb(59, 55, 55);
   background-repeat: no-repeat;
-  background-image: url('../images/tavern.jpg');
+  background-image: url('../images/tavern.jpg');/* Image by rawpixel.com */
   background-attachment: fixed;
 
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif

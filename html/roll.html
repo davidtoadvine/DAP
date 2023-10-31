@@ -341,7 +341,8 @@
     });
 
 
-
+// Code below adjusts the orientation and position of the button row and slightly
+// adjusts the alignment of the results display.
     var wideScreen = 800;
 
     var toggleBtnDirection = function () {
@@ -355,14 +356,10 @@
         document.getElementById('switcher').classList.remove('col');
 
         document.getElementById('dice-row-container').classList.remove('row');
-document.getElementById('result-container').classList.remove('shifted');
-
-        // document.getElementById('buffer1').classList.add('col-sm-3');
-        // document.getElementById('buffer2').classList.remove('row');
-
-        // document.getElementById('dice-row').classList.add('float-right')
-        // document.getElementById('dice-row').classList.remove('float-left');
-      } else {
+document.getElementById('result-container').classList.remove('shifted')
+      } 
+      
+      else {
         document.getElementById('dice-row').classList.add('btn-group')
         document.getElementById('dice-row').classList.remove('btn-group-vertical');
 
@@ -371,20 +368,10 @@ document.getElementById('result-container').classList.remove('shifted');
 
         document.getElementById('dice-row-container').classList.add('row');
         document.getElementById('result-container').classList.add('shifted');
-
-
-        // document.getElementById('buffer1').classList.add('row');
-        // document.getElementById('buffer2').classList.remove('col-sm-3');
-
-        // document.getElementById('dice-row').classList.add('float-left')
-        // document.getElementById('dice-row').classList.remove('float-right');
       }
 
     }
-
-
     
-
     toggleBtnDirection();
     window.addEventListener('resize', toggleBtnDirection);
 

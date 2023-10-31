@@ -75,6 +75,10 @@ table{
 }
 
 
+/* Media query to adjust alignment of button column for smaller screens.
+Small vertical screens are still cramped, but the horizontal option
+looks ok.
+ */
 @media (max-width:840px){
   .input-group{
     justify-content: center;
@@ -85,7 +89,6 @@ table{
 table{
   margin-left: 1rem;
 }
-
 }
 
 .form{
