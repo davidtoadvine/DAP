@@ -58,7 +58,7 @@ table {
 
   background-image: url('../images/parchment.jpg');
   border-radius: 1rem;
-
+  margin-left: 3rem;
 
 
 }
@@ -74,9 +74,10 @@ table {
 
 }
 
-table {
-  margin-left: 3rem;
+tbody{
+  background-color: white;
 }
+
 
 
 /* Media query to adjust alignment of button column for smaller screens.
