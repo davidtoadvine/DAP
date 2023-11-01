@@ -21,7 +21,11 @@
   bottom:0px;
   right: -45px;
   cursor: pointer;
-  
+  border-radius: .25rem;  
+}
+
+.note-btn{
+  border-radius: .25rem;
 }
 p {
   word-wrap: break-word;

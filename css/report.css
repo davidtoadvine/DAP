@@ -5,6 +5,6 @@ body{
 main{
   max-width: 75rem;
 }
-p{
+.my{
   font-weight: 700;
 }
