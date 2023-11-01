@@ -23,6 +23,28 @@ h1{
   background-color: rgb(26, 26, 167);
 border-color: gray;}
 
+.btn-success{
+  background-color: rgb(11, 82, 11);
+}
+.input-group{
+  width: fit-content;
+}
+
+
+
+
+label{
+  padding: 5px;
+  color:white;
+  
+}
+#quantity-container{
+  background-color: #6c757d;
+  width: fit-content;
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+}
+
 #dice-row {
   margin: 1.5rem;
 }
