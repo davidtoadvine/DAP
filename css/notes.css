@@ -36,8 +36,6 @@ p {
 }
 
 
-
-
 /* These media queries keep the notes at an appropriate width for the screen. */
 @media (max-width:600px) {
   .input-box {
