@@ -3,7 +3,7 @@ h1{
 }
 #placeholder {
   background-color: seashell;
-  margin-bottom: 1rem;
+
   margin-right: 2rem;
   margin-top: 1rem;
 
@@ -34,12 +34,22 @@ border-color: gray;}
 
 
 label{
-  padding: 5px;
+  padding: 1rem;
   color:white;
+  text-align: center;
+  line-height: .5;
+  background-color: black;
+border-color: rgb(177, 138, 40);
+border: solid;
+border-width: 1px;
+width: 10rem;
+
+
   
 }
 #quantity-container{
-  background-color: #6c757d;
+  
+  
   width: fit-content;
   margin-bottom: 1rem;
   border-radius: .25rem;
