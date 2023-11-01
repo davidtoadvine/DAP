@@ -3,7 +3,7 @@
 }
 
 .card {
-  background-image: url('../images/parchment.jpg');
+  background-image: url('./images/parchment.jpg');
 
   border: solid;
   border-color: rgb(177, 138, 40);
