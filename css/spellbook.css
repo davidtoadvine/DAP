@@ -1,5 +1,5 @@
 #spell-info {
- background-color: white;
+  background-color: white;
   background-image: url('../images/parchment.jpg');
   border-radius: 1rem;
   margin-left: 3rem;
@@ -9,11 +9,12 @@
   font-weight: 800;
 }
 
-h2{
+h2 {
   font-size: larger;
-  
+
 }
-h3{
+
+h3 {
   font-size: large;
-  
+
 }
