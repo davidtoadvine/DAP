@@ -59,6 +59,7 @@ table {
   background-image: url('../images/parchment.jpg');
   border-radius: 1rem;
   margin-left: 3rem;
+  background-color: white;
 
 
 }
@@ -72,10 +73,6 @@ table {
   position: relative;
   left: 3rem;
 
-}
-
-tbody{
-  background-color: white;
 }
 
 
