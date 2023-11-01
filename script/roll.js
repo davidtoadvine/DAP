@@ -48,7 +48,7 @@ function buttonHighlight(clicked) {
   console.log(buttons);
 
   for (i = 0; i < buttons.length; i++) {
-    buttons[i].style.backgroundColor = 'blue';
+    buttons[i].style.backgroundColor = 'rgb(26, 26, 167)';
   }
   clicked.style.backgroundColor = 'red';
 

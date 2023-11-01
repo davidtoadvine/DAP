@@ -1,4 +1,6 @@
-/* ROLLER */
+h1{
+  text-align: center;
+}
 #placeholder {
   background-color: seashell;
   margin-bottom: 1rem;
@@ -18,7 +20,8 @@
 
 #roll-button {
   width: 10rem;
-}
+  background-color: rgb(26, 26, 167);
+border-color: gray;}
 
 #dice-row {
   margin: 1.5rem;
@@ -38,7 +41,7 @@
 }
 
 #dice-row-container {
-  /* background-color: darkgrey; */
+  
   background-image: url('../images/paneling.jpg');
 
 
