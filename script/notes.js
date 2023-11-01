@@ -19,7 +19,7 @@ createButton.addEventListener("click", (e) => {
   inputBox.innerHTML = '&nbsp';
 
   notesContainer.appendChild(inputBox);
-  img.src = "../images/trash.png";
+  img.src = "DAP/images/trash.png";
   img.alt = "Delete note"
   inputBox.appendChild(img);
 });
