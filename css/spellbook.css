@@ -6,4 +6,9 @@
   max-width: 800px;
   padding: 1rem;
   font-size: large;
+  font-weight: 800;
+}
+
+h2{
+  font-size: larger;
 }

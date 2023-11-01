@@ -13,7 +13,7 @@ h1 {
 
 
 .container {
-  background-color: gray;
+  /* background-color: gray; */
   display: block;
   min-width: 40rem;
 }
