@@ -1,0 +1,9 @@
+#spell-info{
+  background-color: gray;
+  background-image: url('../images/parchment.jpg');
+  border-radius: 1rem;
+  margin-left: 3rem;
+  max-width: 800px;
+  padding:1rem;
+  font-size: large;
+}

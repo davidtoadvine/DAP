@@ -2,3 +2,9 @@
 body{
   background-color: rgb(218, 206, 198);
 }
+main{
+  max-width: 75rem;
+}
+p{
+  font-weight: 700;
+}

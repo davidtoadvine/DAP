@@ -23,7 +23,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Dnd Helper</a>
+        <a class="navbar-brand" href="index.html">DnD Helper</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -34,13 +34,13 @@
               <a class="nav-link" href="roll.html">Dice Roller</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="notes.html">Notebook</a>
+              <a class="nav-link" href="notes.html">Campaign Notes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="library.html">Archives</a>
+              <a class="nav-link" href="library.html">Spellbook</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pointbuy.html">Point Buy Calc</a>
+              <a class="nav-link" href="pointbuy.html">Point Buy Calculator</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -55,7 +55,7 @@
                 </li>
                 <li><a class="dropdown-item" href="https://dnd.wizards.com/">DnD Official Site</a></li>
               </ul>
-            </li>   
+            </li>
           </ul>
         </div>
       </div>
@@ -80,6 +80,7 @@
 
     showNotes();
 
+    
 
 
 
@@ -96,10 +97,13 @@
       let img = document.createElement("img");
       inputBox.className = "input-box";
       inputBox.setAttribute("contenteditable", "true");
+
       //this works but isn't perfect
       inputBox.innerHTML = '&nbsp';
+      
       notesContainer.appendChild(inputBox);
       img.src = "../images/trash.png";
+      img.alt = "Delete note"
       inputBox.appendChild(img);
     });
 

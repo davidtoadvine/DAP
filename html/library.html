@@ -9,6 +9,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/library.css">
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -20,57 +21,77 @@
 <body>
 
   <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">DnD Helper</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="roll.html">Dice Roller</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="notes.html">Notebook</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="library.html">Archives</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pointbuy.html">Point Buy Calc</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Recommended Links
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="https://www.heroforge.com/">Hero Forge Miniatures</a></li>
-              <li><a class="dropdown-item" href="http://www.pretendwizards.com/">Pretend Wizards Podcast</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="https://dnd.wizards.com/">DnD Official Site</a></li>
-            </ul>
-          </li>
-          
-          
-          
-        </ul>
-        
-        
-        
-        
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">DnD Helper</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="roll.html">Dice Roller</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="notes.html">Campaign Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="library.html">Spellbook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pointbuy.html">Point Buy Calculator</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Recommended Links
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://www.heroforge.com/">Hero Forge Miniatures</a></li>
+                <li><a class="dropdown-item" href="http://www.pretendwizards.com/">Pretend Wizards Podcast</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="https://dnd.wizards.com/">DnD Official Site</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 </header>
 
 <main>
   <div class="container">
-  <h1>Archives</h1>
+  <h1>Spellbook</h1>
+
+  <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+    <option selected>Choose a class</option>
+    <option value="1">Wizard</option>
+    <option value="2">Sorceror</option>
+    <option value="3">Cleric</option>
+  </select>
+  
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+    <option selected>Choose a spell</option>
+    <option value="1">Class Spell 1</option>
+    <option value="2">Class Spell 2</option>
+    <option value="3">Class Spell 3</option>
+  </select>
+</div>
+
+<div id="spell-info">
+  <h4>Guidance</h4>
+  <p>You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice.
+     It can roll the die before or after making the ability check. The spell then ends.</p>
+     <p>Range: Touch</p>
+     <p>Components: V,S</p>
+     <p>Ritual: False</p>
+     <p>Casting Time: 1 Action</p>
+     <p>Level: 0</p>
+     <p>School: Divination</p>
+
 </div>
 </main>
 

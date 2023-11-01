@@ -4,7 +4,8 @@
 }
 
 .card {
-  background-color: #beb6b6;
+  /* background-color: #beb6b6; */
+  background-image: url('../images/parchment.jpg');
 
   border: solid;
   border-color: rgb(177, 138, 40);
@@ -17,10 +18,14 @@
 }
 
 .card-img-top {
+
   display: block;
   padding-top: 1rem;
   height: 200px;
   width: 200px;
+}
+.card-body{
+  font-size: larger;
 }
 
 /*  single die -Photo by Armando Are from Pexels: https://www.pexels.com/photo/blue-dice-on-black-background-3649095/ */
