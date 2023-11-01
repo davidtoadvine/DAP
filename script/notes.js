@@ -11,7 +11,7 @@ function updateStorage() {
   localStorage.setItem("notes", notesContainer.innerHTML);
 }
 createButton.addEventListener("click", (e) => {
-  let inputBox = document.createElement("p");
+  let inputBox = document.createElement("h2");
   let img = document.createElement("img");
   inputBox.className = "input-box";
   inputBox.setAttribute("contenteditable", "true");
