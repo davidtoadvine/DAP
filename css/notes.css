@@ -1,10 +1,10 @@
-.input-box{
+.input-box {
   position: relative;
   width: 100%;
   max-width: 500px;
   min-height: 150px;
   background-image: url('../images/parchment.jpg');
-  
+
 
   color: #333;
   padding: 20px;
@@ -14,19 +14,21 @@
   font-size: large;
 
 }
-.input-box img{
+
+.input-box img {
   height: 40px;
   width: 40px;
-  position:absolute;
-  bottom:0px;
+  position: absolute;
+  bottom: 0px;
   right: -45px;
   cursor: pointer;
-  border-radius: .25rem;  
-}
-
-.note-btn{
   border-radius: .25rem;
 }
+
+.note-btn {
+  border-radius: .25rem;
+}
+
 p {
   word-wrap: break-word;
 }
@@ -35,13 +37,14 @@ p {
 
 
 /* These media queries keep the notes at an appropriate width for the screen. */
-@media (max-width:600px){
-  .input-box{
-    max-width: 400px;}
+@media (max-width:600px) {
+  .input-box {
+    max-width: 400px;
   }
+}
 
-@media (max-width:500px){
-  .input-box{
+@media (max-width:500px) {
+  .input-box {
     max-width: 300px;
-  }}
-
+  }
+}

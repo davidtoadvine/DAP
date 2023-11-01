@@ -19,123 +19,111 @@
     crossorigin="anonymous"></script>
 </head>
 
-<body >
+<body>
 
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">DnD Helper</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="roll.html">Dice Roller</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="notes.html">Campaign Notes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="spellbook.html">Spellbook</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pointbuy.html">Point Buy Calculator</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Recommended Links
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="https://www.heroforge.com/">Hero Forge Miniatures</a></li>
-              <li><a class="dropdown-item" href="http://www.pretendwizards.com/">Pretend Wizards Podcast</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="https://dnd.wizards.com/">DnD Official Site</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<main>
-  <div class="container">
-
-    <div class="row" id="switcher">
-
-      <div class="col-sm-3" id="buffer1">
-
-      </div>
-
-      <!-- BUTTONS FOR DIE TYPE SELECTION -->
-      <div id = "dice-row-container" class="">
-        <div class="btn-group-vertical float-right" id="dice-row" role="group" aria-label="First group">
-          <button type="button" id='d4' class="btn btn-secondary">d4</button>
-          <button type="button" id='d6' class="btn btn-secondary">d6</button>
-          <button type="button" id='d8' class="btn btn-secondary">d8</button>
-          <button type="button" id='d12' class="btn btn-secondary" >d12</button>
-          <button type="button" id='d20' class="btn btn-secondary" >d20</button>
-          <button type="button" id='d100' class="btn btn-secondary" >d100</button>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">DnD Helper</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="roll.html">Dice Roller</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="notes.html">Campaign Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="spellbook.html">Spellbook</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pointbuy.html">Point Buy Calculator</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Recommended Links
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="https://www.heroforge.com/">Hero Forge Miniatures</a></li>
+                <li><a class="dropdown-item" href="http://www.pretendwizards.com/">Pretend Wizards Podcast</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="https://dnd.wizards.com/">DnD Official Site</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
+    </nav>
+  </header>
 
-      
+  <main>
+    <div class="container">
 
-      
-      <!-- ROLL BUTTON AND OUTPUT OF ROLL -->
-      <div id = "result-container" class="col-sm-3">
+      <div class="row" id="switcher">
 
-        <div id="placeholder">
-          0
+        <div class="col-sm-3" id="buffer1">
+
         </div>
-        <button type="button" id="roll-button" class="btn btn-primary">
-          Choose a Die Size</button>
 
+        <!-- BUTTONS FOR DIE TYPE SELECTION -->
+        <div id="dice-row-container" class="">
+          <div class="btn-group-vertical float-right" id="dice-row" role="group" aria-label="First group">
+            <button type="button" id='d4' class="btn btn-secondary">d4</button>
+            <button type="button" id='d6' class="btn btn-secondary">d6</button>
+            <button type="button" id='d8' class="btn btn-secondary">d8</button>
+            <button type="button" id='d12' class="btn btn-secondary">d12</button>
+            <button type="button" id='d20' class="btn btn-secondary">d20</button>
+            <button type="button" id='d100' class="btn btn-secondary">d100</button>
+          </div>
+        </div>
 
+        <!-- ROLL BUTTON AND OUTPUT OF ROLL -->
+        <div id="result-container" class="col-sm-3">
 
-            <!-- CHOOSE NUMBER OF DICE -->
-            <div class="center">
-              <p>
-              </p>
+          <div id="placeholder">
+            0
+          </div>
+          <button type="button" id="roll-button" class="btn btn-primary">
+            Choose a Die Size</button>
 
-              <p></p>
-              <p>
-              </p>
-              <div class="input-group">
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="input-count">
-                    <span class="glyphicon glyphicon-minus"> - </span>
-                  </button>
-                </span>
-                <form id="form">
-                  <input type="number" id="quantity" name="input-count" class="form-control input-number" value="1"
-                    min="1" max="20">
-                </form>
-                <span class="input-group-btn">
-                  <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="input-count">
-                    <span class="glyphicon glyphicon-plus"> + </span>
-                  </button>
-                </span>
-              </div>
-              <p></p>
+          <!-- CHOOSE NUMBER OF DICE -->
+          <div class="center">
+            <p>
+            </p>
+            <p></p>
+            <p>
+            </p>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="input-count">
+                  <span class="glyphicon glyphicon-minus"> - </span>
+                </button>
+              </span>
+              <form id="form">
+                <input type="number" id="quantity" name="input-count" class="form-control input-number" value="1"
+                  min="1" max="20">
+              </form>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="input-count">
+                  <span class="glyphicon glyphicon-plus"> + </span>
+                </button>
+              </span>
             </div>
-
-
-
+            <p></p>
           </div>
-
-          <div class="col-sm-3" id = "buffer2">
-          </div>
-
+        </div>
+        <div class="col-sm-3" id="buffer2">
+        </div>
+      </div>
     </div>
-
-  </div>
-</main>
+  </main>
 
 
   <script src="../script/roll.js">  </script>

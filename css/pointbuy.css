@@ -1,10 +1,10 @@
+body {
 
-body{
-  
   text-align: right;
-  
+
 }
-h1{
+
+h1 {
   padding-top: 32px;
   padding-bottom: 1rem;
   padding-left: 47px;
@@ -12,24 +12,25 @@ h1{
 
 
 
-.container{
+.container {
   background-color: gray;
   display: block;
-min-width: 40rem;
+  min-width: 40rem;
 }
 
 
 
-.input-group{
+.input-group {
   display: flex;
   justify-content: flex-end;
 }
-.col-2{
+
+.col-2 {
   min-width: 8rem;
 }
 
 
-td{
+td {
   min-width: 3rem;
   width: 6rem;
   max-width: 9rem;
@@ -38,40 +39,42 @@ td{
   height: 4rem;
 }
 
-th{
+th {
   min-width: 3rem;
   width: 8rem;
   max-width: 8rem;
 
   min-height: 2rem;
-height: 4rem;
+  height: 4rem;
 }
 
-#table-container{
+#table-container {
   width: 100vw;
 }
-table{
+
+table {
   text-align: center;
   font-size: x-large;
 
   background-image: url('../images/parchment.jpg');
-border-radius: 1rem;
+  border-radius: 1rem;
 
-  
-  
+
+
 }
 
-#row-thing{
+#row-thing {
   position: relative;
 }
 
-#score-header{
+#score-header {
   text-align: right;
-  position:relative;
+  position: relative;
   left: 3rem;
-  
+
 }
-table{
+
+table {
   margin-left: 10rem;
 }
 
@@ -81,23 +84,24 @@ Small vertical screens are still cramped, but the horizontal option
 looks ok.
  */
 
-  .input-group{
-    justify-content: center;
+.input-group {
+  justify-content: center;
+}
+
+#score-header {
+  left: 0rem;
+}
+
+@media (max-width:850px) {
+  table {
+    margin-left: 1rem;
+    table-layout: fixed;
+    width: 50%;
   }
-  #score-header{ 
-    left:0rem;
 }
 
-@media (max-width:850px){
-table{
-  margin-left: 1rem;
-  table-layout: fixed;
-width: 50%;
-}
-}
-
-.form{
-  width:3rem;
+.form {
+  width: 3rem;
   min-width: 3rem;
 }
 

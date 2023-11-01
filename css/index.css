@@ -1,10 +1,8 @@
-
 #report {
   padding-left: 5rem;
 }
 
 .card {
-  /* background-color: #beb6b6; */
   background-image: url('../images/parchment.jpg');
 
   border: solid;
@@ -12,30 +10,29 @@
   border-radius: .5rem;
 
   height: 450px;
-
   min-width: 16rem;
 
 }
 
 .card-img-top {
-
   display: block;
   padding-top: 1rem;
   height: 200px;
   width: 200px;
 }
-.card-body{
+
+.card-body {
   font-size: larger;
 }
 
-/*  single die -Photo by Armando Are from Pexels: https://www.pexels.com/photo/blue-dice-on-black-background-3649095/ */
+/*The following are images used and their sources. The images are free and say attribution isn't required,
+but I kept the information in case I should do something with it.*/
+
+/* single die -Photo by Armando Are from Pexels: https://www.pexels.com/photo/blue-dice-on-black-background-3649095/ */
 /* quill - Photo by RDNE Stock project from Pexels: https://www.pexels.com/photo/close-up-shot-of-a-person-writing-on-a-spell-book-7979104/ */
 /* skulls - Photo by F H from Pexels: https://www.pexels.com/photo/pile-of-human-skulls-2747893/ */
 /* library - Photo by Ivo Rainha from Pexels: https://www.pexels.com/photo/assorted-books-on-shelf-1290141/ */
 
 /* trash - icon by raphaelsilva from Pixabay: https://pixabay.com/vectors/trash-icon-waste-junk-clean-2935441/ */
 /* paneling- image by geralt from Pixabay: https://pixabay.com/illustrations/boards-wood-grain-old-bohlen-75462/ */
-
-
-
-/* //////////////////////////////////////////////// */
+/* parchment - image by ChrisFiedler from Pixabay: https://pixabay.com/photos/paper-old-texture-parchment-1074131/ */
