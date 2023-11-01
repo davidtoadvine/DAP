@@ -208,9 +208,9 @@ var toggleBtnDirection = function () {
     document.getElementById('switcher').classList.remove('col');
 
     document.getElementById('dice-row-container').classList.remove('row');
-document.getElementById('result-container').classList.remove('shifted')
-  } 
-  
+    document.getElementById('result-container').classList.remove('shifted')
+  }
+
   else {
     document.getElementById('dice-row').classList.add('btn-group')
     document.getElementById('dice-row').classList.remove('btn-group-vertical');
