@@ -68,7 +68,7 @@
       <h1>Spellbook</h1>
 
       <select id="class-select" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Choose a class</option>
+        <option value = "0" selected>Choose a class</option>
         <option value="1">Bard</option>
         <option value="2">Cleric</option>
         <option value="3">Druid</option>
@@ -99,7 +99,29 @@
 
   <script>
 
-    // getting spells based on class input
+    //reset class dropdown on refresh
+const classSelect = document.getElementById('class-select');
+classSelect.value = 0;
+
+    // getting all spells as default option on load
+async function fetchAllSpells() {
+  try {
+    const response = await fetch(`https://www.dnd5eapi.co/api/spells`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+    const spellNames = data.results.map((spell) => spell.name);
+    // put class spells into spell dropdown
+    populateDropdown(spellNames);
+  } catch (error) {
+    console.error(`Error fetching all spells:`, error.message);
+  }
+}
+fetchAllSpells();
+
+
+    // narrowing spells based on class input
     async function fetchClassSpells(className) {
       try {
 
@@ -146,7 +168,7 @@
 
       }
 
-      // spells found
+      // if spells are found
       else {
         // Add a default option
         const defaultOption = document.createElement('option');
