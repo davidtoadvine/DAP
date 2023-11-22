@@ -81,7 +81,7 @@
 
       </select>
 
-      <select id= "spell-select" class="form-select form-select-sm" aria-label=".form-select-sm example">
+      <select id="spell-select" class="form-select form-select-sm" aria-label=".form-select-sm example">
         <option selected>Choose a spell</option>
       </select>
     </div>
@@ -97,246 +97,188 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 
-    <script>
-      // getting spells based on class input
-      // async function fetchClasses() {
-  // try {
-    // const response = await fetch(`https://www.dnd5eapi.co/api/classes/`);
-    // if (!response.ok) {
-      // throw new Error(`HTTP error! Status: ${response.status}`);
-    // }
-    // const data = await response.json();
-    // const classNames = data.results.map((results) => results.name);
-    // populateDropdown1(classNames);
-    // console.log(classNames);
-  // } catch (error) {
-    // console.error(`Error fetching class names:`, error.message);
+  <script>
 
+    // getting spells based on class input
+    async function fetchClassSpells(className) {
+      try {
 
-  // }
-//}
+        const response = await fetch(`https://www.dnd5eapi.co/api/classes/${className}/spells`);
 
-//populating the spell dropdown menu
-// function populateDropdown1(classNames) {
-  // const classSelect = document.getElementById('class-select');
-//  Clear existing options
-  // classSelect.innerHTML = '';
-// 
-//  Add a default option
-  // const defaultOption = document.createElement('option');
-  // defaultOption.text = 'Select a class';
-  // classSelect.add(defaultOption);
-// 
-//  Add spell names to the dropdown
-  // classNames.forEach((className) => {
-    // const option = document.createElement('option');
-    // option.text = className;
-    // classSelect.add(option);
-  // });
-// }
-// 
-// fetchClasses();
-// 
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
+        const data = await response.json();
+        const spellNames = data.results.map((spell) => spell.name);
 
+        // put class spells into spell dropdown
+        populateDropdown(spellNames);
 
-
-
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////
-      // getting spells based on class input
-      async function fetchClassSpells(className) {
-  try {
-    console.log('fetching spells for')
-    console.log(className);
-
-    const response = await fetch(`https://www.dnd5eapi.co/api/classes/${className}/spells`);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      } catch (error) {
+        console.error(`Error fetching ${className} spells:`, error.message);
+      }
     }
 
-    const data = await response.json();
-
-    const spellNames = data.results.map((spell) => spell.name);
-    
-    console.log(spellNames);
-
-    populateDropdown(spellNames);
-
-  } catch (error) {
-    console.error(`Error fetching ${className} spells:`, error.message);
-  }
-}
-
-//populating the spell dropdown menu
-function populateDropdown(spellNames) {
-  console.log("populating with spell names")
-  console.log(spellNames.length);
-  const spellSelect = document.getElementById('spell-select');
-  // Clear existing options
-  spellSelect.innerHTML = '';
-
-  if(spellNames.length == 0){
-// Add a default option
-const defaultOption = document.createElement('option');
-defaultOption.text = 'No spells available for this class.';
-spellSelect.add(defaultOption);
-
-const spellBox = document.getElementById("spell-info");
-// Clear existing
-spellBox.innerHTML = '';
-
-const martialText = document.createElement('h3');
-spellBox.appendChild(martialText);
-martialText.textContent = "Martial classes currently do not have spells associated with them. Please check your subclass details.";
-
-  }
-  else{
-  // Add a default option
-  const defaultOption = document.createElement('option');
-  defaultOption.text = 'Select a spell';
-  spellSelect.add(defaultOption);
-
-  // Add spell names to the dropdown
-  spellNames.forEach((spellName) => {
-    const option = document.createElement('option');
-    option.text = spellName;
-    spellSelect.add(option);
-  });
-}
-}
+    //populating the spell dropdown menu
+    function populateDropdown(spellNames) {
+      console.log("populating with spell names")
+      console.log(spellNames.length);
+      const spellSelect = document.getElementById('spell-select');
+      // Clear existing options
+      spellSelect.innerHTML = '';
 
 
+      // if no spells are found (this shouldn't occur though)
+      if (spellNames.length == 0) {
+        // Add a default option
+        const defaultOption = document.createElement('option');
+        defaultOption.text = 'No spells available for this class.';
+        spellSelect.add(defaultOption);
 
+        const spellBox = document.getElementById("spell-info");
+        // Clear existing
+        spellBox.innerHTML = '';
 
-      ////////////////////////////////////////////////////////////////////////////////////////////////////////
-      // getting spell data
-      async function fetchSpellDetails(spell) {
-  try {
-    console.log('fetching data')
-    console.log(spell);
-    spell =  spell.replace(/ /g, '-');
-    console.log(spell);
+        const martialText = document.createElement('h3');
+        spellBox.appendChild(martialText);
+        martialText.textContent = "No spells available for this class.";
 
-    const response = await fetch(`https://www.dnd5eapi.co/api/spells/${spell}`);
+      }
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      // spells found
+      else {
+        // Add a default option
+        const defaultOption = document.createElement('option');
+        defaultOption.text = 'Select a spell';
+        spellSelect.add(defaultOption);
+
+        // Add spell names to the dropdown
+        spellNames.forEach((spellName) => {
+          const option = document.createElement('option');
+          option.text = spellName;
+          spellSelect.add(option);
+        });
+      }
     }
 
-    const data = await response.json();
 
-    /// all the indiv things
+    // getting spell data
+    async function fetchSpellDetails(spell) {
+      try {
+        // format text for url
+        spell = spell.replace(/ /g, '-');
 
-     const Name = data.name;
-     const Desc = data.desc;
-     const Range = data.range;
-     const Components = data.components;
-     const Material = data.material;
-     const Ritual = data.ritual;
-     const Duration = data.duration;
-     const Concentration = data.concentration;
-     const CastingTime = data.casting_time;
-     const Level = data.level;
-     const School = data.school.name;
-     
-     const spellBox = document.getElementById("spell-info");
-// Clear existing
-spellBox.innerHTML = '';
-// name
-const spellName = document.createElement('h2');
-spellBox.appendChild(spellName);
-const strongElement = document.createElement('strong');
-strongElement.textContent = Name;
-// Append the <strong> element to the h2 element
-spellName.appendChild(strongElement);
+        const response = await fetch(`https://www.dnd5eapi.co/api/spells/${spell}`);
 
-// description
-const spellDesc = document.createElement('h3');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
-Desc.forEach((line) => {
-  const h = document.createElement('h3');
-  h.textContent = line;
-  spellBox.appendChild(h);
-})
+        const data = await response.json();
 
-//spellBox.appendChild(spellDesc);
-//spellDesc.textContent = Desc;
+        /// all the pieces of spell data
+        const Name = data.name;
+        const Desc = data.desc;
+        const Range = data.range;
+        const Components = data.components;
+        const Material = data.material;
+        const Ritual = data.ritual;
+        const Duration = data.duration;
+        const Concentration = data.concentration;
+        const CastingTime = data.casting_time;
+        const Level = data.level;
+        const School = data.school.name;
 
-// Range
-const spellRange = document.createElement('h3');
-spellBox.appendChild(spellRange);
-spellRange.appendChild(document.createElement('strong')).textContent = 'Range:';
-spellRange.appendChild(document.createTextNode(` ${Range}`));
+        //text box
+        const spellBox = document.getElementById("spell-info");
 
-// Components
-const spellComponents = document.createElement('h3');
-spellBox.appendChild(spellComponents);
-spellComponents.appendChild(document.createElement('strong')).textContent = 'Components:';
-spellComponents.appendChild(document.createTextNode(` ${Components}`));
+        // Clear existing
+        spellBox.innerHTML = '';
 
-// Material
-const spellMaterial = document.createElement('h3');
-spellBox.appendChild(spellMaterial);
-spellMaterial.appendChild(document.createElement('strong')).textContent = 'Material:';
-spellMaterial.appendChild(document.createTextNode(` ${Material || 'None'}`));
+        // Name
+        const spellName = document.createElement('h2');
+        spellBox.appendChild(spellName);
+        const strongElement = document.createElement('strong');
+        strongElement.textContent = Name;
+        spellName.appendChild(strongElement);
 
-// Duration
-const spellDuration = document.createElement('h3');
-spellBox.appendChild(spellDuration);
-spellDuration.appendChild(document.createElement('strong')).textContent = 'Duration:';
-spellDuration.appendChild(document.createTextNode(` ${Duration}`));
+        // Description
+        const spellDesc = document.createElement('h3');
 
-// Concentration
-const spellConcentration = document.createElement('h3');
-spellBox.appendChild(spellConcentration);
-spellConcentration.appendChild(document.createElement('strong')).textContent = 'Concentration:';
-spellConcentration.appendChild(document.createTextNode(` ${Concentration ? 'Yes' : 'No'}`));
-
-// Casting Time
-const spellCastingTime = document.createElement('h3');
-spellBox.appendChild(spellCastingTime);
-spellCastingTime.appendChild(document.createElement('strong')).textContent = 'Casting Time:';
-spellCastingTime.appendChild(document.createTextNode(` ${CastingTime}`));
-
-// Level
-const spellLevel = document.createElement('h3');
-spellBox.appendChild(spellLevel);
-spellLevel.appendChild(document.createElement('strong')).textContent = 'Level:';
-spellLevel.appendChild(document.createTextNode(` ${Level}`));
-
-// School
-const spellSchool = document.createElement('h3');
-spellBox.appendChild(spellSchool);
-spellSchool.appendChild(document.createElement('strong')).textContent = 'School:';
-spellSchool.appendChild(document.createTextNode(` ${School}`));
-
-  } catch (error) {
-    console.error(`Error fetching ${spell} data:`, error.message);
-  }
-}
+        Desc.forEach((line) => {
+          const h = document.createElement('h3');
+          h.textContent = line;
+          spellBox.appendChild(h);
+        })
 
 
+        // Range
+        const spellRange = document.createElement('h3');
+        spellBox.appendChild(spellRange);
+        spellRange.appendChild(document.createElement('strong')).textContent = 'Range:';
+        spellRange.appendChild(document.createTextNode(` ${Range}`));
 
-// Event listener for dropdown change
-document.getElementById('class-select').addEventListener('change', async function () {
-  const selectedClassName = this.options[this.selectedIndex].textContent.toLowerCase();
-  console.log(selectedClassName);
-  await fetchClassSpells(selectedClassName);
+        // Components
+        const spellComponents = document.createElement('h3');
+        spellBox.appendChild(spellComponents);
+        spellComponents.appendChild(document.createElement('strong')).textContent = 'Components:';
+        spellComponents.appendChild(document.createTextNode(` ${Components}`));
 
-})
+        // Material
+        const spellMaterial = document.createElement('h3');
+        spellBox.appendChild(spellMaterial);
+        spellMaterial.appendChild(document.createElement('strong')).textContent = 'Material:';
+        spellMaterial.appendChild(document.createTextNode(` ${Material || 'None'}`));
 
-// Event listener for dropdown change
-document.getElementById('spell-select').addEventListener('change', async function () {
-  const selectedSpellName = this.value.toLowerCase();
-  console.log('dropdown change heard')
-  console.log(selectedSpellName);
-  await fetchSpellDetails(selectedSpellName);
+        // Duration
+        const spellDuration = document.createElement('h3');
+        spellBox.appendChild(spellDuration);
+        spellDuration.appendChild(document.createElement('strong')).textContent = 'Duration:';
+        spellDuration.appendChild(document.createTextNode(` ${Duration}`));
 
-})
+        // Concentration
+        const spellConcentration = document.createElement('h3');
+        spellBox.appendChild(spellConcentration);
+        spellConcentration.appendChild(document.createElement('strong')).textContent = 'Concentration:';
+        spellConcentration.appendChild(document.createTextNode(` ${Concentration ? 'Yes' : 'No'}`));
 
+        // Casting Time
+        const spellCastingTime = document.createElement('h3');
+        spellBox.appendChild(spellCastingTime);
+        spellCastingTime.appendChild(document.createElement('strong')).textContent = 'Casting Time:';
+        spellCastingTime.appendChild(document.createTextNode(` ${CastingTime}`));
 
-    </script>
+        // Level
+        const spellLevel = document.createElement('h3');
+        spellBox.appendChild(spellLevel);
+        spellLevel.appendChild(document.createElement('strong')).textContent = 'Level:';
+        spellLevel.appendChild(document.createTextNode(` ${Level}`));
+
+        // School
+        const spellSchool = document.createElement('h3');
+        spellBox.appendChild(spellSchool);
+        spellSchool.appendChild(document.createElement('strong')).textContent = 'School:';
+        spellSchool.appendChild(document.createTextNode(` ${School}`));
+
+      } catch (error) {
+        console.error(`Error fetching ${spell} data:`, error.message);
+      }
+    }
+
+    // Event listener for class dropdown change
+    document.getElementById('class-select').addEventListener('change', async function () {
+      const selectedClassName = this.options[this.selectedIndex].textContent.toLowerCase();
+      await fetchClassSpells(selectedClassName);
+    })
+
+    // Event listener for spell dropdown change
+    document.getElementById('spell-select').addEventListener('change', async function () {
+      const selectedSpellName = this.value.toLowerCase();
+      await fetchSpellDetails(selectedSpellName);
+    })
+
+  </script>
 
 
 
