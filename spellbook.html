@@ -88,16 +88,17 @@
     </div>
 
     <div id="spell-info">
-      <h2>Guidance</h2>
-      <h3>You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled
-        to one ability check of its choice.
-        It can roll the die before or after making the ability check. The spell then ends.</h3>
-      <h3>Range: Touch</h3>
-      <h3>Components: V,S</h3>
-      <h3>Ritual: False</h3>
-      <h3>Casting Time: 1 Action</h3>
-      <h3>Level: 0</h3>
-      <h3>School: Divination</h3>
+      <h2>Select a spell above using menus above.</h2>
+      <!-- <h2>Guidance</h2> -->
+      <!-- <h3>You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled -->
+        <!-- to one ability check of its choice. -->
+        <!-- It can roll the die before or after making the ability check. The spell then ends.</h3> -->
+      <!-- <h3>Range: Touch</h3> -->
+      <!-- <h3>Components: V,S</h3> -->
+      <!-- <h3>Ritual: False</h3> -->
+      <!-- <h3>Casting Time: 1 Action</h3> -->
+      <!-- <h3>Level: 0</h3> -->
+      <!-- <h3>School: Divination</h3> -->
 
     </div>
   </main>
@@ -222,7 +223,7 @@ function populateDropdown(spellNames) {
     /// all the indiv things
 
      const Name = data.name;
-     console.log(spellName);
+     console.log(Name);
      const Desc = data.desc;
      const Range = data.range;
      const Components = data.components;
@@ -234,6 +235,17 @@ function populateDropdown(spellNames) {
      const Level = data.level;
      const School = data.school;
      
+     const spellBox = document.getElementById("spell-info");
+// Clear existing
+spellBox.innerHTML = '';
+// name
+const spellName = document.createElement('h2');
+spellBox.appendChild(spellName);
+spellName.textContent = Name;
+// description
+const spellDesc = document.createElement('h3');
+spellBox.appendChild(spellDesc);
+spellDesc.textContent = Desc;
 
 
 
