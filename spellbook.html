@@ -223,7 +223,6 @@ function populateDropdown(spellNames) {
     /// all the indiv things
 
      const Name = data.name;
-     console.log(Name);
      const Desc = data.desc;
      const Range = data.range;
      const Components = data.components;
@@ -233,7 +232,7 @@ function populateDropdown(spellNames) {
      const Concentration = data.concentration;
      const CastingTime = data.casting_time;
      const Level = data.level;
-     const School = data.school;
+     const School = data.school.name;
      
      const spellBox = document.getElementById("spell-info");
 // Clear existing
@@ -247,7 +246,50 @@ const spellDesc = document.createElement('h3');
 spellBox.appendChild(spellDesc);
 spellDesc.textContent = Desc;
 
+// Range
+const spellRange = document.createElement('h3');
+spellBox.appendChild(spellRange);
+spellRange.textContent = `Range: ${Range}`;
 
+// Components
+const spellComponents = document.createElement('h3');
+spellBox.appendChild(spellComponents);
+spellComponents.textContent = `Components: ${Components}`;
+
+// Material
+const spellMaterial = document.createElement('h3');
+spellBox.appendChild(spellMaterial);
+spellMaterial.textContent = `Material: ${Material || 'None'}`;
+
+// Ritual
+const spellRitual = document.createElement('h3');
+spellBox.appendChild(spellRitual);
+spellRitual.textContent = `Ritual: ${Ritual ? 'Yes' : 'No'}`;
+
+// Duration
+const spellDuration = document.createElement('h3');
+spellBox.appendChild(spellDuration);
+spellDuration.textContent = `Duration: ${Duration}`;
+
+// Concentration
+const spellConcentration = document.createElement('h3');
+spellBox.appendChild(spellConcentration);
+spellConcentration.textContent = `Concentration: ${Concentration ? 'Yes' : 'No'}`;
+
+// Casting Time
+const spellCastingTime = document.createElement('h3');
+spellBox.appendChild(spellCastingTime);
+spellCastingTime.textContent = `Casting Time: ${CastingTime}`;
+
+// Level
+const spellLevel = document.createElement('h3');
+spellBox.appendChild(spellLevel);
+spellLevel.textContent = `Level: ${Level}`;
+
+// School
+const spellSchool = document.createElement('h3');
+spellBox.appendChild(spellSchool);
+spellSchool.textContent = `School: ${School}`;
 
   } catch (error) {
     console.error(`Error fetching ${spell} data:`, error.message);
