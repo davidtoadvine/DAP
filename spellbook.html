@@ -147,10 +147,18 @@ function populateDropdown1(classNames) {
 
 fetchClasses();
 
+
+
+
+
+
       ////////////////////////////////////////////////////////////////////////////////////////////////////////
       // getting spells based on class input
       async function fetchClassSpells(className) {
   try {
+    console.log('fetching spells for')
+    console.log(className);
+
     const response = await fetch(`https://www.dnd5eapi.co/api/classes/${className}/spells`);
 
     if (!response.ok) {
@@ -160,7 +168,11 @@ fetchClasses();
     const data = await response.json();
 
     const spellNames = data.results.map((spell) => spell.name);
+    
+    console.log(spellNames);
+
     populateDropdown(spellNames);
+
   } catch (error) {
     console.error(`Error fetching ${className} spells:`, error.message);
   }
@@ -168,6 +180,8 @@ fetchClasses();
 
 //populating the spell dropdown menu
 function populateDropdown(spellNames) {
+  console.log("populating with spell names")
+  console.log(spellNames);
   const spellSelect = document.getElementById('spell-select');
   // Clear existing options
   spellSelect.innerHTML = '';
@@ -186,7 +200,20 @@ function populateDropdown(spellNames) {
 }
 
 // Example: Fetch and populate wizard spells
-fetchClassSpells('wizard');
+//fetchClassSpells('wizard');
+
+
+
+
+
+// Event listener for dropdown change
+document.getElementById('class-select').addEventListener('change', async function () {
+  const selectedClassName = this.value.toLowerCase();
+  console.log(selectedClassName);
+  await fetchClassSpells(selectedClassName);
+
+})
+//fetchClassSpells('cleric');
     </script>
 
 
