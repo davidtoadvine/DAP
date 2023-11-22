@@ -1,7 +1,33 @@
 const notesContainer = document.querySelector(".notes-container");
 const createButton = document.querySelector(".note-btn");
+const deleteAllButton = document.getElementById("delete-all-btn");
+const deleteAllConfirm = document.getElementById("delete-all-confirm");
+
 let notes = document.querySelectorAll(".input-box");
 showNotes();
+
+
+ // Get the button and popup elements
+ const openPopupButton = document.getElementById('delete-all-btn');
+ const closePopupButton = document.getElementById('closePopupButton');
+ const popupOverlay = document.getElementById('popupOverlay');
+
+ // Show the popup when the button is clicked
+ openPopupButton.addEventListener('click', () => {
+   popupOverlay.style.display = 'flex';
+ });
+
+ // Close the popup when the close button is clicked
+ closePopupButton.addEventListener('click', () => {
+   popupOverlay.style.display = 'none';
+ });
+
+ deleteAllConfirm.addEventListener("click", ()=>{
+  popupOverlay.style.display = 'none';
+  localStorage.clear();
+  showNotes();
+
+   })
 
 function showNotes() {
   notesContainer.innerHTML = localStorage.getItem("notes");
@@ -29,7 +55,7 @@ notesContainer.addEventListener("click", function (e) {
     e.target.parentElement.remove();
     updateStorage();
   }
-  else if (e.target.tagName === "P") {
+  else if (e.target.tagName === "H2") {
 
     notes = document.querySelectorAll(".input-box");
     notes.forEach(note => {
