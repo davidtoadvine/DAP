@@ -199,10 +199,48 @@ function populateDropdown(spellNames) {
   });
 }
 
-// Example: Fetch and populate wizard spells
-//fetchClassSpells('wizard');
 
 
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////
+      // getting spell data?
+      async function fetchSpellDetails(spell) {
+  try {
+    console.log('fetching data')
+    console.log(spell);
+    spell =  spell.replace(/ /g, '-');
+    console.log(spell);
+
+    const response = await fetch(`https://www.dnd5eapi.co/api/spells/${spell}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    /// all the indiv things
+
+     const Name = data.name;
+     console.log(spellName);
+     const Desc = data.desc;
+     const Range = data.range;
+     const Components = data.components;
+     const Material = data.material;
+     const Ritual = data.ritual;
+     const Duration = data.duration;
+     const Concentration = data.concentration;
+     const CastingTime = data.casting_time;
+     const Level = data.level;
+     const School = data.school;
+     
+
+
+
+  } catch (error) {
+    console.error(`Error fetching ${spell} data:`, error.message);
+  }
+}
 
 
 
@@ -213,6 +251,18 @@ document.getElementById('class-select').addEventListener('change', async functio
   await fetchClassSpells(selectedClassName);
 
 })
+
+// Event listener for dropdown change
+document.getElementById('spell-select').addEventListener('change', async function () {
+  const selectedSpellName = this.value.toLowerCase();
+  console.log('dropdown change heard')
+  console.log(selectedSpellName);
+  await fetchSpellDetails(selectedSpellName);
+
+})
+
+
+
 //fetchClassSpells('cleric');
     </script>
 
