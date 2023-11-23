@@ -501,11 +501,21 @@ let dexMinus = document.getElementById("dex-minus");
 
 dexPlus.onclick= function () {
 
-  document.getElementById('dex-mod').innerHTML = Math.floor( (document.getElementById('quantity-dex').value -10) / 2); 
+  let num = parseInt((document.getElementById('quantity-dex').value)); 
+num = (num + ancDex -10)/2;
+num = Math.floor(num);
+console.log(Math.floor(num));
+
+  document.getElementById('dex-mod').innerHTML = num;
+  
 }
 dexMinus.onclick= function () {
+  let num = parseInt((document.getElementById('quantity-dex').value)); 
+num = (num + ancDex -10)/2;
+num = Math.floor(num);
+console.log(Math.floor(num));
+  document.getElementById('dex-mod').innerHTML =Math.floor( (document.getElementById('quantity-dex').value  -10) / 2); 
 
-  document.getElementById('dex-mod').innerHTML =Math.floor( (document.getElementById('quantity-dex').value -10) / 2); 
 }
 
 let conBase = document.getElementById("con-form").innerHTML;
