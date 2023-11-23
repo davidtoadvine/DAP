@@ -551,7 +551,14 @@ chaMinus.onclick= function () {
 }
 
 
-////
+////ANCESTRY DROPDOWNS AND WHAT NOT
+
+let ancStr=0;
+let ancDex=0;
+let ancCon=0;
+let ancInt=0;
+let ancWis=0;
+let ancCha=0;
 
  // JavaScript to dynamically populate the subrace dropdown based on the selected race
  document.getElementById('anc-select').addEventListener('change', function() {
@@ -567,10 +574,22 @@ chaMinus.onclick= function () {
   // Populate options based on the selected race
   if (selectedRace === 'dwarf') {
     subraceDropdown.removeAttribute('disabled');
+    ancStr=0;
+ancDex=0;
+ancCon=0;
+ancInt=0;
+ancWis=0;
+ancCha=0;
     addOption(subraceDropdown, 'mountain', 'Mountain Dwarf');
     addOption(subraceDropdown, 'hill', 'Hill Dwarf');
   } else if (selectedRace === 'elf') {
     subraceDropdown.removeAttribute('disabled');
+    ancStr=0;
+ancDex=0;
+ancCon=0;
+ancInt=0;
+ancWis=0;
+ancCha=0;
     addOption(subraceDropdown, 'high', 'High Elf');
     addOption(subraceDropdown, 'wood', 'Wood Elf');
     addOption(subraceDropdown, 'dark', 'Drow');
@@ -578,10 +597,76 @@ chaMinus.onclick= function () {
     subraceDropdown.removeAttribute('disabled');
     addOption(subraceDropdown, 'forest', 'Forest Gnome');
     addOption(subraceDropdown, 'rock', 'Rock Gnome');
-  } else {
+  } 
+  else if (selectedRace === 'halfling') {
+    subraceDropdown.removeAttribute('disabled');
+    ancStr=0;
+ancDex=0;
+ancCon=0;
+ancInt=0;
+ancWis=0;
+ancCha=0;
+    addOption(subraceDropdown, 'lightfoot', 'Lightfoot Halfling');
+    addOption(subraceDropdown, 'stout', 'Stout Halfling');
+  
+  
+  }
+  else if (selectedRace === 'human'){
     // Disable subrace dropdown for races without subraces
     subraceDropdown.setAttribute('disabled', 'disabled');
+    ancStr=1;
+ancDex=1;
+ancCon=1;
+ancInt=1;
+ancWis=1;
+ancCha=1;
+  }else if (selectedRace === 'dragonborn'){
+    // Disable subrace dropdown for races without subraces
+    subraceDropdown.setAttribute('disabled', 'disabled');
+    ancStr = 2;
+ancDex=0;
+ancCon=0;
+ancInt=0;
+ancWis=0;
+    ancCha=1;
+  }else if (selectedRace === 'tiefling'){
+    // Disable subrace dropdown for races without subraces
+    subraceDropdown.setAttribute('disabled', 'disabled');
+    ancStr=0;
+ancDex=0;
+ancCon=0;
+ancInt=1;
+ancWis=0;
+ancCha=2;
+  }else if (selectedRace === 'half-orc'){
+    // Disable subrace dropdown for races without subraces
+    subraceDropdown.setAttribute('disabled', 'disabled');
+    ancStr=2;
+ancDex=0;
+ancCon=1;
+ancInt=0;
+ancWis=0;
+ancCha=0;
+  }else if (selectedRace === 'half-elf'){
+    // Disable subrace dropdown for races without subraces
+    subraceDropdown.setAttribute('disabled', 'disabled');
+    ancStr=0;
+ancDex=1;
+ancCon=0;
+ancInt=1;
+ancWis=0;
+ancCha=2;
   }
+
+  document.getElementById("str-anc").textContent = ancStr;
+  document.getElementById("dex-anc").textContent = ancDex;
+  document.getElementById("con-anc").textContent = ancCon;
+  document.getElementById("int-anc").textContent = ancInt;
+  document.getElementById("wis-anc").textContent = ancWis;
+  document.getElementById("cha-anc").textContent = ancCha;
+  
+
+  
 });
 
 // Function to add options to a dropdown
@@ -591,3 +676,97 @@ function addOption(selectElement, value, text) {
   option.text = text;
   selectElement.add(option);
 }
+
+
+//////
+
+ // JavaScript to dynamically populate the subrace dropdown based on the selected race
+document.getElementById('subrace').addEventListener('change', function() {
+  // Get the selected race
+  var selectedRace = this.value;
+  
+  
+  // Populate options based on the selected race
+  if (selectedRace === 'mountain') {
+    
+    ancStr=2;
+ancDex=0;
+ancCon=2;
+ancInt=0;
+ancWis=0;
+ancCha=0;
+  } 
+  else if (selectedRace === 'hill') {
+    ancStr=0;
+ancDex=0;
+ancCon=2;
+ancInt=0;
+ancWis=1;
+ancCha=0;
+  }
+  else if (selectedRace === 'lightfoot') {
+    ancStr=0;
+ancDex=2;
+ancCon=0;
+ancInt=0;
+ancWis=0;
+ancCha=1;
+  }
+  else if (selectedRace === 'stout') {
+    ancStr=0;
+ancDex=2;
+ancCon=1;
+ancInt=0;
+ancWis=0;
+ancCha=0;
+  }
+  else if (selectedRace === 'rock') {
+    ancStr=0;
+ancDex=0;
+ancCon=1;
+ancInt=2;
+ancWis=0;
+ancCha=0;
+  }
+  else if (selectedRace === 'forest') {
+    ancStr=0;
+ancDex=1;
+ancCon=0;
+ancInt=2;
+ancWis=0;
+ancCha=0;
+  }
+  else if (selectedRace === 'high') {
+    ancStr=0;
+ancDex=2;
+ancCon=0;
+ancInt=1;
+ancWis=0;
+ancCha=0;
+  }
+  else if (selectedRace === 'wood') {
+    ancStr=0;
+ancDex=2;
+ancCon=0;
+ancInt=0;
+ancWis=1;
+ancCha=0;
+  }
+  else if (selectedRace === 'dark') {
+    ancStr=0;
+ancDex=2;
+ancCon=0;
+ancInt=0;
+ancWis=0;
+ancCha=1;
+  }
+
+  document.getElementById("str-anc").textContent = ancStr;
+document.getElementById("dex-anc").textContent = ancDex;
+document.getElementById("con-anc").textContent = ancCon;
+document.getElementById("int-anc").textContent = ancInt;
+document.getElementById("wis-anc").textContent = ancWis;
+document.getElementById("cha-anc").textContent = ancCha;
+
+})
+  //else if (selectedRace === 'elf') {
