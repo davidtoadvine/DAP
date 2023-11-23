@@ -549,3 +549,45 @@ chaPlus.onclick= function () {
 chaMinus.onclick= function () {
   document.getElementById('cha-mod').innerHTML = Math.floor( (document.getElementById('quantity-cha').value -10) / 2); 
 }
+
+
+////
+
+ // JavaScript to dynamically populate the subrace dropdown based on the selected race
+ document.getElementById('anc-select').addEventListener('change', function() {
+  // Get the selected race
+  var selectedRace = this.value;
+  
+  // Get the subrace dropdown
+  var subraceDropdown = document.getElementById('subrace');
+  
+  // Remove existing options
+  subraceDropdown.innerHTML = '<option value="" selected>Select a subrace</option>';
+  
+  // Populate options based on the selected race
+  if (selectedRace === 'dwarf') {
+    subraceDropdown.removeAttribute('disabled');
+    addOption(subraceDropdown, 'mountain', 'Mountain Dwarf');
+    addOption(subraceDropdown, 'hill', 'Hill Dwarf');
+  } else if (selectedRace === 'elf') {
+    subraceDropdown.removeAttribute('disabled');
+    addOption(subraceDropdown, 'high', 'High Elf');
+    addOption(subraceDropdown, 'wood', 'Wood Elf');
+    addOption(subraceDropdown, 'dark', 'Drow');
+  } else if (selectedRace === 'gnome') {
+    subraceDropdown.removeAttribute('disabled');
+    addOption(subraceDropdown, 'forest', 'Forest Gnome');
+    addOption(subraceDropdown, 'rock', 'Rock Gnome');
+  } else {
+    // Disable subrace dropdown for races without subraces
+    subraceDropdown.setAttribute('disabled', 'disabled');
+  }
+});
+
+// Function to add options to a dropdown
+function addOption(selectElement, value, text) {
+  var option = document.createElement('option');
+  option.value = value;
+  option.text = text;
+  selectElement.add(option);
+}

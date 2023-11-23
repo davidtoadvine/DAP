@@ -16,6 +16,7 @@ h1 {
   /* background-color: gray; */
   display: block;
   min-width: 40rem;
+  text-align: left;
 }
 
 
@@ -116,3 +117,5 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+

@@ -65,7 +65,32 @@
   </header>
 
   <main>
+    <div class="container">
     <h1>Point Buy Calculator</h1>
+
+    
+    <select id="anc-select" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+
+  <option value="0" selected>Choose ancestry</option>
+  <option value="dwarf">Dwarf</option>
+  <option value="elf">Elf</option>
+  <option value="halfling">Halfling</option>
+  <option value="human">Human</option>
+  <option value="dragonborn">Dragonborn</option>
+  <option value="gnome">Gnome</option>
+  <option value="half-elf">Half-Elf</option>
+  <option value="half-orc">Half-Orc</option>
+  <option value="tiefling">Tiefling</option>
+
+    </select>
+
+
+    <label for="subrace">Choose a subrace:</label>
+<select id="subrace" name="subrace" disabled>
+  <option value="" selected>Select a race first</option>
+</select>
+
+  </div>
 
     <div id="table-container">
       <table>
