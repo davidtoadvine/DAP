@@ -489,10 +489,10 @@ let strPlus = document.getElementById("str-plus");
 let strMinus = document.getElementById("str-minus");
 
 strPlus.onclick= function () {
-  document.getElementById('str-mod').innerHTML = document.getElementById('quantity-str').value;
+  document.getElementById('str-mod').innerHTML = Math.floor( (document.getElementById('quantity-str').value -10) / 2); 
 }
 strMinus.onclick= function () {
-  document.getElementById('str-mod').innerHTML = document.getElementById('quantity-str').value;
+  document.getElementById('str-mod').innerHTML = Math.floor( (document.getElementById('quantity-str').value -10) / 2); 
 }
 
 let dexBase = document.getElementById("dex-form").innerHTML;
@@ -500,10 +500,12 @@ let dexPlus = document.getElementById("dex-plus");
 let dexMinus = document.getElementById("dex-minus");
 
 dexPlus.onclick= function () {
-  document.getElementById('dex-mod').innerHTML = document.getElementById('quantity-dex').value;
+
+  document.getElementById('dex-mod').innerHTML = Math.floor( (document.getElementById('quantity-dex').value -10) / 2); 
 }
 dexMinus.onclick= function () {
-  document.getElementById('dex-mod').innerHTML = document.getElementById('quantity-dex').value;
+
+  document.getElementById('dex-mod').innerHTML =Math.floor( (document.getElementById('quantity-dex').value -10) / 2); 
 }
 
 let conBase = document.getElementById("con-form").innerHTML;
@@ -511,10 +513,10 @@ let conPlus = document.getElementById("con-plus");
 let conMinus = document.getElementById("con-minus");
 
 conPlus.onclick= function () {
-  document.getElementById('con-mod').innerHTML = document.getElementById('quantity-con').value;
+  document.getElementById('con-mod').innerHTML = Math.floor( (document.getElementById('quantity-con').value -10) / 2); 
 }
 conMinus.onclick= function () {
-  document.getElementById('con-mod').innerHTML = document.getElementById('quantity-con').value;
+  document.getElementById('con-mod').innerHTML = Math.floor( (document.getElementById('quantity-con').value -10) / 2); 
 }
 
 let intBase = document.getElementById("int-form").innerHTML;
@@ -522,28 +524,28 @@ let intPlus = document.getElementById("int-plus");
 let intMinus = document.getElementById("int-minus");
 
 intPlus.onclick= function () {
-  document.getElementById('int-mod').innerHTML = document.getElementById('quantity-int').value;
+  document.getElementById('int-mod').innerHTML = Math.floor( (document.getElementById('quantity-int').value -10) / 2); 
 }
 intMinus.onclick= function () {
-  document.getElementById('int-mod').innerHTML = document.getElementById('quantity-int').value;
+  document.getElementById('int-mod').innerHTML = Math.floor( (document.getElementById('quantity-int').value -10) / 2); 
 }
 let wisBase = document.getElementById("wis-form").innerHTML;
 let wisPlus = document.getElementById("wis-plus");
 let wisMinus = document.getElementById("wis-minus");
 
 wisPlus.onclick= function () {
-  document.getElementById('wis-mod').innerHTML = document.getElementById('quantity-wis').value;
+  document.getElementById('wis-mod').innerHTML = Math.floor( (document.getElementById('quantity-wis').value -10) / 2); 
 }
 wisMinus.onclick= function () {
-  document.getElementById('wis-mod').innerHTML = document.getElementById('quantity-wis').value;
+  document.getElementById('wis-mod').innerHTML = Math.floor( (document.getElementById('quantity-wis').value -10) / 2); 
 }
 let chaBase = document.getElementById("cha-form").innerHTML;
 let chaPlus = document.getElementById("cha-plus");
 let chaMinus = document.getElementById("cha-minus");
 
 chaPlus.onclick= function () {
-  document.getElementById('cha-mod').innerHTML = document.getElementById('quantity-cha').value;
+  document.getElementById('cha-mod').innerHTML = Math.floor( (document.getElementById('quantity-cha').value -10) / 2); 
 }
 chaMinus.onclick= function () {
-  document.getElementById('cha-mod').innerHTML = document.getElementById('quantity-cha').value;
+  document.getElementById('cha-mod').innerHTML = Math.floor( (document.getElementById('quantity-cha').value -10) / 2); 
 }
