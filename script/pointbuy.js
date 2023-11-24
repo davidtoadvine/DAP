@@ -715,27 +715,53 @@ let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 
 for (let i = 0; i < attributes.length; i++) {
 
-  //let base = document.getElementById(`${i}-form`).innerHTML;
+  let base = document.getElementById(`quantity-${attributes[i]}`);
   let plus = document.getElementById(`${attributes[i]}-plus`);
   let minus = document.getElementById(`${attributes[i]}-minus`);
+  let mod = document.getElementById(`${attributes[i]}-mod`);
+  let cost = document.getElementById(`${attributes[i]}-cost`);
 
 plus.onclick= function () {
+  let baseValue = parseInt(base.value);
 
 let vars = [ancStr,ancDex,ancCon,ancInt,ancWis,ancCha];
-let input = vars[i];
+let ancScore = vars[i];
+let sum = parseInt(ancScore) + baseValue;
 
-console.log(vars[i] + 'attrb');
-let sum = parseInt(input) + parseInt(document.getElementById(`quantity-${attributes[i]}`).value);
-  document.getElementById(`${attributes[i]}-mod`).innerHTML = Math.floor((sum-10)/2);
+  mod.innerHTML = Math.floor((sum-10)/2);
+
+  if(baseValue <= 13){
+    cost.innerHTML = baseValue - 8;
+  }
+  if(baseValue == 14){
+    cost.innerHTML = 7;
+  }
+  if(baseValue == 15){
+    cost.innerHTML = 9;
+  }
+
 }
 
 minus.onclick= function () {
+  let baseValue = parseInt(base.value);
+
   let vars = [ancStr,ancDex,ancCon,ancInt,ancWis,ancCha];
   let input = vars[i];
+let sum = parseInt(input)+ baseValue;
 
-console.log(vars[i] + 'attrb');
-let sum = parseInt(input)+ parseInt(document.getElementById(`quantity-${attributes[i]}`).value);
-  document.getElementById(`${attributes[i]}-mod`).innerHTML = Math.floor((sum-10)/2);
+  mod.innerHTML = Math.floor((sum-10)/2);
+
+  if(baseValue <= 13){
+    cost.innerHTML = baseValue - 8;
+  }
+  if(baseValue == 14){
+    cost.innerHTML = 7;
+  }
+  if(baseValue == 15){
+    cost.innerHTML = 9;
+  }
+  
+  
   
 }
 
