@@ -1,15 +1,22 @@
 
+function calculateCost(){
 
-// let array = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
-// 
-// function resetInput() {
-  // for (let i = 0; i < attributes.length; i++) {
-// 
-    // var base = document.getElementById(`quantity-${array[i]}`);
-    // base.value = 10;
-  // }
-// }
-// window.onload(resetInput());
+  let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+
+ 
+  let total = 0;
+  for (let i = 0; i < attributes.length; i++) {
+
+    let cost = document.getElementById(`${attributes[i]}-cost`);
+    console.log(cost.innerText);
+
+    total += parseInt(cost.innerText);
+    
+  }
+document.getElementById('total-cost').innerText = total + "/27";
+  
+
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //when btn-number class member is clicked
@@ -43,6 +50,7 @@ $('.btn-number1').click(function (e) {
   } else {
     input.val(8);
   }
+  ;
 });
 
 //when btn-number class member is clicked
@@ -76,6 +84,7 @@ $('.btn-number2').click(function (e) {
   } else {
     input.val(8);
   }
+  ;
 });
 
 //when btn-number class member is clicked
@@ -108,7 +117,7 @@ $('.btn-number3').click(function (e) {
     }
   } else {
     input.val(8);
-  }
+  };
 });
 //when btn-number class member is clicked
 $('.btn-number4').click(function (e) {
@@ -140,7 +149,7 @@ $('.btn-number4').click(function (e) {
     }
   } else {
     input.val(8);
-  }
+  };
 });
 //when btn-number class member is clicked
 $('.btn-number5').click(function (e) {
@@ -172,7 +181,7 @@ $('.btn-number5').click(function (e) {
     }
   } else {
     input.val(8);
-  }
+  };
 });
 //when btn-number class member is clicked
 $('.btn-number6').click(function (e) {
@@ -204,7 +213,7 @@ $('.btn-number6').click(function (e) {
     }
   } else {
     input.val(8);
-  }
+  };
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $('.input-number1').focusin(function () {
@@ -795,16 +804,18 @@ let sum = parseInt(ancScore) + baseValue;
 
   mod.innerHTML = Math.floor((sum-10)/2);
 
+
+
   if(baseValue <= 13){
     cost.innerHTML = baseValue - 8;
   }
-  if(baseValue == 14){
+  else if(baseValue == 14){
     cost.innerHTML = 7;
   }
-  if(baseValue == 15){
+  else if(baseValue == 15){
     cost.innerHTML = 9;
   }
-
+calculateCost();
 }
 
 minus.onclick= function () {
@@ -815,17 +826,20 @@ minus.onclick= function () {
 let sum = parseInt(input)+ baseValue;
 
   mod.innerHTML = Math.floor((sum-10)/2);
-
-  if(baseValue <= 13){
+  
+  
+  
+   if(baseValue <= 13){
     cost.innerHTML = baseValue - 8;
   }
-  if(baseValue == 14){
+ else  if(baseValue == 14){
     cost.innerHTML = 7;
   }
-  if(baseValue == 15){
+  else if(baseValue == 15){
     cost.innerHTML = 9;
   }
   
   
-  
+  calculateCost();
+
 }}
