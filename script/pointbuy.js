@@ -598,6 +598,20 @@ ancCha=2;
   document.getElementById("cha-anc").textContent = "+" + ancCha;
   
 
+  ////////////////////for mod column
+
+  let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+
+  for (let i = 0; i < attributes.length; i++) {
+    let base = document.getElementById(`quantity-${attributes[i]}`);
+    let mod = document.getElementById(`${attributes[i]}-mod`);
+    let baseValue = parseInt(base.value);
+    let vars = [ancStr,ancDex,ancCon,ancInt,ancWis,ancCha];
+    let ancScore = vars[i];
+    let sum = parseInt(ancScore) + baseValue;
+    
+      mod.innerHTML = Math.floor((sum-10)/2);}
+
   
 });
 
@@ -704,7 +718,19 @@ document.getElementById("wis-anc").textContent =   "+" + ancWis;
 
 document.getElementById("cha-anc").textContent =   "+" + ancCha;
 
+///////////for mod column
+let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 
+for (let i = 0; i < attributes.length; i++) {
+
+  let base = document.getElementById(`quantity-${attributes[i]}`);
+  let mod = document.getElementById(`${attributes[i]}-mod`);
+  let baseValue = parseInt(base.value);
+  let vars = [ancStr,ancDex,ancCon,ancInt,ancWis,ancCha];
+  let ancScore = vars[i];
+  let sum = parseInt(ancScore) + baseValue;
+  
+    mod.innerHTML = Math.floor((sum-10)/2);}
 })
 /////
 
@@ -722,8 +748,8 @@ for (let i = 0; i < attributes.length; i++) {
   let cost = document.getElementById(`${attributes[i]}-cost`);
 
 plus.onclick= function () {
-  let baseValue = parseInt(base.value);
 
+let baseValue = parseInt(base.value);
 let vars = [ancStr,ancDex,ancCon,ancInt,ancWis,ancCha];
 let ancScore = vars[i];
 let sum = parseInt(ancScore) + baseValue;
