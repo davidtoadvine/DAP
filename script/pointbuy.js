@@ -483,94 +483,6 @@ $(".input-number6").keydown(function (e) {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////// THIS IS MODIFYING MODIFIER
-let strBase = document.getElementById("str-form").innerHTML;
-let strPlus = document.getElementById("str-plus");
-let strMinus = document.getElementById("str-minus");
-
-strPlus.onclick= function () {
-
-let sum = parseInt(ancStr) + parseInt(document.getElementById('quantity-str').value);
-
-  document.getElementById('str-mod').innerHTML = Math.floor((sum-10)/2);
-
-}
-strMinus.onclick= function () {
-
-let sum = parseInt(ancStr)+ parseInt(document.getElementById('quantity-str').value);
-
-  document.getElementById('str-mod').innerHTML = Math.floor((sum-10)/2);
-  
-  
-
-
-}
-
-let dexBase = document.getElementById("dex-form").innerHTML;
-let dexPlus = document.getElementById("dex-plus");
-let dexMinus = document.getElementById("dex-minus");
-
-dexPlus.onclick= function () {
-  let sum = parseInt(ancDex)+ parseInt(document.getElementById('quantity-dex').value);
-
-  document.getElementById('dex-mod').innerHTML = Math.floor((sum-10)/2);
-  
-}
-dexMinus.onclick= function () {
-  let sum = parseInt(ancDex)+ parseInt(document.getElementById('quantity-dex').value);
-
-  document.getElementById('dex-mod').innerHTML = Math.floor((sum-10)/2);
-}
-
-let conBase = document.getElementById("con-form").innerHTML;
-let conPlus = document.getElementById("con-plus");
-let conMinus = document.getElementById("con-minus");
-
-conPlus.onclick= function () {
-  let sum = parseInt(ancCon)+ parseInt(document.getElementById('quantity-con').value);
-  document.getElementById('con-mod').innerHTML = Math.floor((sum-10)/2);
-}
-conMinus.onclick= function () {
-  let sum = parseInt(ancCon)+ parseInt(document.getElementById('quantity-con').value);
-  document.getElementById('con-mod').innerHTML = Math.floor((sum-10)/2);
-}
-
-let intBase = document.getElementById("int-form").innerHTML;
-let intPlus = document.getElementById("int-plus");
-let intMinus = document.getElementById("int-minus");
-
-intPlus.onclick= function () {
-  let sum = parseInt(ancInt)+ parseInt(document.getElementById('quantity-int').value);
-  document.getElementById('int-mod').innerHTML = Math.floor((sum-10)/2);
-}
-intMinus.onclick= function () {
-  let sum = parseInt(ancInt)+ parseInt(document.getElementById('quantity-int').value);
-  document.getElementById('int-mod').innerHTML = Math.floor((sum-10)/2);
-}
-let wisBase = document.getElementById("wis-form").innerHTML;
-let wisPlus = document.getElementById("wis-plus");
-let wisMinus = document.getElementById("wis-minus");
-
-wisPlus.onclick= function () {
-  let sum = parseInt(ancWis)+ parseInt(document.getElementById('quantity-wis').value);
-  document.getElementById('wis-mod').innerHTML = Math.floor((sum-10)/2); 
-}
-wisMinus.onclick= function () {
-  let sum = parseInt(ancWis)+ parseInt(document.getElementById('quantity-wis').value);
-  document.getElementById('wis-mod').innerHTML = Math.floor((sum-10)/2);
-}
-let chaBase = document.getElementById("cha-form").innerHTML;
-let chaPlus = document.getElementById("cha-plus");
-let chaMinus = document.getElementById("cha-minus");
-
-chaPlus.onclick= function () {
-  let sum = parseInt(ancCha)+ parseInt(document.getElementById('quantity-cha').value);
-  document.getElementById('cha-mod').innerHTML = Math.floor((sum-10)/2);}
-chaMinus.onclick= function () {
-  let sum = parseInt(ancCha)+ parseInt(document.getElementById('quantity-cha').value);
-  document.getElementById('cha-mod').innerHTML = Math.floor((sum-10)/2);}
-
-
 ////ANCESTRY DROPDOWNS AND WHAT NOT
 
 let ancStr=0;
@@ -678,12 +590,12 @@ ancWis=0;
 ancCha=2;
   }
 
-  document.getElementById("str-anc").textContent = ancStr;
-  document.getElementById("dex-anc").textContent = ancDex;
-  document.getElementById("con-anc").textContent = ancCon;
-  document.getElementById("int-anc").textContent = ancInt;
-  document.getElementById("wis-anc").textContent = ancWis;
-  document.getElementById("cha-anc").textContent = ancCha;
+  document.getElementById("str-anc").textContent = "+" + ancStr;
+  document.getElementById("dex-anc").textContent = "+" + ancDex;
+  document.getElementById("con-anc").textContent = "+" + ancCon;
+  document.getElementById("int-anc").textContent = "+" + ancInt;
+  document.getElementById("wis-anc").textContent = "+" + ancWis;
+  document.getElementById("cha-anc").textContent = "+" + ancCha;
   
 
   
@@ -781,12 +693,116 @@ ancWis=0;
 ancCha=1;
   }
 
-  document.getElementById("str-anc").textContent = ancStr;
-document.getElementById("dex-anc").textContent = ancDex;
-document.getElementById("con-anc").textContent = ancCon;
-document.getElementById("int-anc").textContent = ancInt;
-document.getElementById("wis-anc").textContent = ancWis;
-document.getElementById("cha-anc").textContent = ancCha;
+  document.getElementById("str-anc").textContent = "+" + ancStr;
+  
+document.getElementById("dex-anc").textContent = "+" + ancDex;
+document.getElementById("con-anc").textContent =   "+" + ancCon;
+
+document.getElementById("int-anc").textContent =   "+" + ancInt;
+
+document.getElementById("wis-anc").textContent =   "+" + ancWis;
+
+document.getElementById("cha-anc").textContent =   "+" + ancCha;
+
 
 })
-  //else if (selectedRace === 'elf') {
+/////
+
+///////////////////// THIS IS MODIFYING MODIFIER
+
+
+let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+
+for (let i = 0; i < attributes.length; i++) {
+
+  //let base = document.getElementById(`${i}-form`).innerHTML;
+  let plus = document.getElementById(`${attributes[i]}-plus`);
+  let minus = document.getElementById(`${attributes[i]}-minus`);
+
+plus.onclick= function () {
+
+let vars = [ancStr,ancDex,ancCon,ancInt,ancWis,ancCha];
+let input = vars[i];
+
+console.log(vars[i] + 'attrb');
+let sum = parseInt(input) + parseInt(document.getElementById(`quantity-${attributes[i]}`).value);
+  document.getElementById(`${attributes[i]}-mod`).innerHTML = Math.floor((sum-10)/2);
+}
+
+minus.onclick= function () {
+  let vars = [ancStr,ancDex,ancCon,ancInt,ancWis,ancCha];
+  let input = vars[i];
+
+console.log(vars[i] + 'attrb');
+let sum = parseInt(input)+ parseInt(document.getElementById(`quantity-${attributes[i]}`).value);
+  document.getElementById(`${attributes[i]}-mod`).innerHTML = Math.floor((sum-10)/2);
+  
+}
+
+
+}
+
+// let dexBase = document.getElementById("dex-form").innerHTML;
+// let dexPlus = document.getElementById("dex-plus");
+// let dexMinus = document.getElementById("dex-minus");
+// 
+// dexPlus.onclick= function () {
+  // let sum = parseInt(ancDex)+ parseInt(document.getElementById('quantity-dex').value);
+// 
+  // document.getElementById('dex-mod').innerHTML = Math.floor((sum-10)/2);
+  // 
+// }
+// dexMinus.onclick= function () {
+  // let sum = parseInt(ancDex)+ parseInt(document.getElementById('quantity-dex').value);
+// 
+  // document.getElementById('dex-mod').innerHTML = Math.floor((sum-10)/2);
+// }
+// 
+// let conBase = document.getElementById("con-form").innerHTML;
+// let conPlus = document.getElementById("con-plus");
+// let conMinus = document.getElementById("con-minus");
+// 
+// conPlus.onclick= function () {
+  // let sum = parseInt(ancCon)+ parseInt(document.getElementById('quantity-con').value);
+  // document.getElementById('con-mod').innerHTML = Math.floor((sum-10)/2);
+// }
+// conMinus.onclick= function () {
+  // let sum = parseInt(ancCon)+ parseInt(document.getElementById('quantity-con').value);
+  // document.getElementById('con-mod').innerHTML = Math.floor((sum-10)/2);
+// }
+// 
+// let intBase = document.getElementById("int-form").innerHTML;
+// let intPlus = document.getElementById("int-plus");
+// let intMinus = document.getElementById("int-minus");
+// 
+// intPlus.onclick= function () {
+  // let sum = parseInt(ancInt)+ parseInt(document.getElementById('quantity-int').value);
+  // document.getElementById('int-mod').innerHTML = Math.floor((sum-10)/2);
+// }
+// intMinus.onclick= function () {
+  // let sum = parseInt(ancInt)+ parseInt(document.getElementById('quantity-int').value);
+  // document.getElementById('int-mod').innerHTML = Math.floor((sum-10)/2);
+// }
+// let wisBase = document.getElementById("wis-form").innerHTML;
+// let wisPlus = document.getElementById("wis-plus");
+// let wisMinus = document.getElementById("wis-minus");
+// 
+// wisPlus.onclick= function () {
+  // let sum = parseInt(ancWis)+ parseInt(document.getElementById('quantity-wis').value);
+  // document.getElementById('wis-mod').innerHTML = Math.floor((sum-10)/2); 
+// }
+// wisMinus.onclick= function () {
+  // let sum = parseInt(ancWis)+ parseInt(document.getElementById('quantity-wis').value);
+  // document.getElementById('wis-mod').innerHTML = Math.floor((sum-10)/2);
+// }
+// let chaBase = document.getElementById("cha-form").innerHTML;
+// let chaPlus = document.getElementById("cha-plus");
+// let chaMinus = document.getElementById("cha-minus");
+// 
+// chaPlus.onclick= function () {
+  // let sum = parseInt(ancCha)+ parseInt(document.getElementById('quantity-cha').value);
+  // document.getElementById('cha-mod').innerHTML = Math.floor((sum-10)/2);}
+// chaMinus.onclick= function () {
+  // let sum = parseInt(ancCha)+ parseInt(document.getElementById('quantity-cha').value);
+  // document.getElementById('cha-mod').innerHTML = Math.floor((sum-10)/2);}
+// 
