@@ -1,3 +1,16 @@
+
+
+// let array = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+// 
+// function resetInput() {
+  // for (let i = 0; i < attributes.length; i++) {
+// 
+    // var base = document.getElementById(`quantity-${array[i]}`);
+    // base.value = 10;
+  // }
+// }
+// window.onload(resetInput());
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //when btn-number class member is clicked
 $('.btn-number1').click(function (e) {
@@ -483,7 +496,16 @@ $(".input-number6").keydown(function (e) {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////ANCESTRY DROPDOWNS AND WHAT NOT
+////ANCESTRY DROPDOWNS
+function resetDropdowns() {
+  var dropdown1= document.getElementById('anc-select');
+  var dropdown2= document.getElementById('subrace-select');
+  dropdown1.selectedIndex = 0; // Set the default selected index (0 for the first option)
+  dropdown1.selectedIndex = 0;
+}
+
+// Call the resetDropdown function when the page is refreshed
+window.onload = resetDropdowns;
 
 let ancStr=0;
 let ancDex=0;
@@ -624,9 +646,9 @@ function addOption(selectElement, value, text) {
 }
 
 
-//////
+////// SUBRACE DROPDOWN//////////////////////////////////////////////////////////////////
 
- // JavaScript to dynamically populate the subrace dropdown based on the selected race
+ // Populate the subrace dropdown based on the selected race
 document.getElementById('subrace').addEventListener('change', function() {
   // Get the selected race
   var selectedRace = this.value;
@@ -732,12 +754,19 @@ for (let i = 0; i < attributes.length; i++) {
   
     mod.innerHTML = Math.floor((sum-10)/2);}
 })
-/////
 
-///////////////////// THIS IS MODIFYING MODIFIER
-
+///////////////////// MODIFIER COLUMN/////////////////////////////////////////////////
 
 let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+
+function resetInput() {
+  for (let i = 0; i < attributes.length; i++) {
+
+    var base = document.getElementById(`quantity-${attributes[i]}`);
+    base.value = 10;
+  }
+}
+window.onload(resetInput());
 
 for (let i = 0; i < attributes.length; i++) {
 
@@ -789,72 +818,4 @@ let sum = parseInt(input)+ baseValue;
   
   
   
-}
-
-
-}
-
-// let dexBase = document.getElementById("dex-form").innerHTML;
-// let dexPlus = document.getElementById("dex-plus");
-// let dexMinus = document.getElementById("dex-minus");
-// 
-// dexPlus.onclick= function () {
-  // let sum = parseInt(ancDex)+ parseInt(document.getElementById('quantity-dex').value);
-// 
-  // document.getElementById('dex-mod').innerHTML = Math.floor((sum-10)/2);
-  // 
-// }
-// dexMinus.onclick= function () {
-  // let sum = parseInt(ancDex)+ parseInt(document.getElementById('quantity-dex').value);
-// 
-  // document.getElementById('dex-mod').innerHTML = Math.floor((sum-10)/2);
-// }
-// 
-// let conBase = document.getElementById("con-form").innerHTML;
-// let conPlus = document.getElementById("con-plus");
-// let conMinus = document.getElementById("con-minus");
-// 
-// conPlus.onclick= function () {
-  // let sum = parseInt(ancCon)+ parseInt(document.getElementById('quantity-con').value);
-  // document.getElementById('con-mod').innerHTML = Math.floor((sum-10)/2);
-// }
-// conMinus.onclick= function () {
-  // let sum = parseInt(ancCon)+ parseInt(document.getElementById('quantity-con').value);
-  // document.getElementById('con-mod').innerHTML = Math.floor((sum-10)/2);
-// }
-// 
-// let intBase = document.getElementById("int-form").innerHTML;
-// let intPlus = document.getElementById("int-plus");
-// let intMinus = document.getElementById("int-minus");
-// 
-// intPlus.onclick= function () {
-  // let sum = parseInt(ancInt)+ parseInt(document.getElementById('quantity-int').value);
-  // document.getElementById('int-mod').innerHTML = Math.floor((sum-10)/2);
-// }
-// intMinus.onclick= function () {
-  // let sum = parseInt(ancInt)+ parseInt(document.getElementById('quantity-int').value);
-  // document.getElementById('int-mod').innerHTML = Math.floor((sum-10)/2);
-// }
-// let wisBase = document.getElementById("wis-form").innerHTML;
-// let wisPlus = document.getElementById("wis-plus");
-// let wisMinus = document.getElementById("wis-minus");
-// 
-// wisPlus.onclick= function () {
-  // let sum = parseInt(ancWis)+ parseInt(document.getElementById('quantity-wis').value);
-  // document.getElementById('wis-mod').innerHTML = Math.floor((sum-10)/2); 
-// }
-// wisMinus.onclick= function () {
-  // let sum = parseInt(ancWis)+ parseInt(document.getElementById('quantity-wis').value);
-  // document.getElementById('wis-mod').innerHTML = Math.floor((sum-10)/2);
-// }
-// let chaBase = document.getElementById("cha-form").innerHTML;
-// let chaPlus = document.getElementById("cha-plus");
-// let chaMinus = document.getElementById("cha-minus");
-// 
-// chaPlus.onclick= function () {
-  // let sum = parseInt(ancCha)+ parseInt(document.getElementById('quantity-cha').value);
-  // document.getElementById('cha-mod').innerHTML = Math.floor((sum-10)/2);}
-// chaMinus.onclick= function () {
-  // let sum = parseInt(ancCha)+ parseInt(document.getElementById('quantity-cha').value);
-  // document.getElementById('cha-mod').innerHTML = Math.floor((sum-10)/2);}
-// 
+}}
