@@ -605,12 +605,22 @@ ancCha=0;
     // Disable subrace dropdown for races without subraces
     subraceDropdown.setAttribute('disabled', 'disabled');
     ancStr=0;
-ancDex=1;
-ancCon=0;
-ancInt=1;
-ancWis=0;
-ancCha=2;
-  }
+    ancDex=1;
+    ancCon=0;
+    ancInt=1;
+    ancWis=0;
+    ancCha=2;
+      }
+      else if (selectedRace === '0'){
+        // Disable subrace dropdown for races without subraces
+        subraceDropdown.setAttribute('disabled', 'disabled');
+        ancStr=0;
+        ancDex=0;
+        ancCon=0;
+        ancInt=0;
+        ancWis=0;
+        ancCha=0;
+          }
 
   document.getElementById("str-anc").textContent = "+" + ancStr;
   document.getElementById("dex-anc").textContent = "+" + ancDex;
