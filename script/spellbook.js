@@ -12,6 +12,8 @@ async function fetchAllSpells() {
     }
     const data = await response.json();
     const spellNames = data.results.map((spell) => spell.name);
+
+
     // put class spells into spell dropdown
     populateDropdown(spellNames);
   } catch (error) {
@@ -76,10 +78,15 @@ function populateDropdown(spellNames) {
     spellSelect.add(defaultOption);
 
     // Add spell names to the dropdown
+   
+   
+
     spellNames.forEach((spellName) => {
+
       const option = document.createElement('option');
       option.text = spellName;
       spellSelect.add(option);
+   
     });
   }
 }

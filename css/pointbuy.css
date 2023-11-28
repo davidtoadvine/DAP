@@ -11,7 +11,9 @@ h1 {
 }
 
 
-
+*~label{
+  color: yellow;
+}
 .container {
   /* background-color: gray; */
   display: block;
@@ -25,6 +27,7 @@ h1 {
 .input-group {
   display: flex;
   justify-content: flex-end;
+  width:8rem;
 }
 
 .col-2 {

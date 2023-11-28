@@ -1,10 +1,26 @@
+function updateTotal(){
+  let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+
+  for(let i =0; i<6;i++){
+  fieldName = $(`.btn-number${i+1}`).attr('data-field');
+console.log(fieldName);
+var input = $("input[name='" + fieldName + "']");
+var currentVal = parseInt(input.val());
+console.log(currentVal)
+
+  let target = document.getElementById(`total-score-${attributes[i]}`);
+  console.log(target+ "target");
+  
+  target.textContent = parseInt(document.getElementById(`${attributes[i]}-anc`).innerText )+ currentVal;
+  }
+  }
 
 // calculate total points spent
 function calculateCost(){
 
   let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 
- 
+
   let total = 0;
   for (let i = 0; i < attributes.length; i++) {
 
@@ -31,21 +47,24 @@ $(`.btn-number${i}`).click(function (e) {
   type = $(this).attr('data-type');
   var input = $("input[name='" + fieldName + "']");
   var currentVal = parseInt(input.val());
+
   if (!isNaN(currentVal)) {
+
     if (type == 'minus') {
+
       if (currentVal > input.attr('min')) {
         input.val(currentVal - 1).change();
-
-
       }
+
       if (parseInt(input.val()) == input.attr('min')) {
         $(this).attr('disabled', true);
       }
+
+      
     } else if (type == 'plus') {
+
       if (currentVal < input.attr('max')) {
         input.val(currentVal + 1).change();
-
-
       }
       if (parseInt(input.val()) == input.attr('max')) {
         $(this).attr('disabled', true);
@@ -55,7 +74,19 @@ $(`.btn-number${i}`).click(function (e) {
     input.val(8);
   }
   ;
+
+  currentVal = parseInt(input.val());
+  updateTotal();
+
 });
+
+
+
+
+
+
+
+
 }
 
 /////////////////////////////////////////////////
@@ -65,7 +96,6 @@ $(`.input-number${i}`).focusin(function () {
   $(this).data('oldValue', $(this).val());
 });
 
-console.log(`${i}` + "i");
 
 $(`.input-number${i}`).change(function () {
   minValue = parseInt($(this).attr('min'));
@@ -73,21 +103,19 @@ $(`.input-number${i}`).change(function () {
   valueCurrent = parseInt($(this).val());
   name = $(this).attr('name');
 
-  console.log("current" + valueCurrent);
-  console.log("minValue" + minValue);
+
+
   if (valueCurrent >= minValue) {
     $(`.btn-number${i}[data-type='minus'][data-field="${name}"]`).removeAttr('disabled');
-  } else {
+  }
+  else {
     alert('Sorry, the minimum value was reached');
     $(this).val(8);
 
   }
-  if (valueCurrent <= maxValue && valueCurrent > 0) {
-    $(`.btn-number${i}[data-type='plus'][data-field=" + name + "]`).removeAttr('disabled')
 
-  }
-  else if (valueCurrent <= maxValue) {
-    $(`.btn-number${i}[data-type='plus'][data-field=" + name + "]`).removeAttr('disabled')
+   if (valueCurrent <= maxValue) {
+    $(`.btn-number${i}[data-type='plus'][data-field="${name}"]`).removeAttr('disabled')
 
   }
   else {
@@ -95,6 +123,8 @@ $(`.input-number${i}`).change(function () {
     $(this).val(15);
 
   }
+  valueCurrent = parseInt($(this).val());
+updateTotal();
 });
 
 $(`.input-number${i}`).keydown(function (e) {
@@ -202,7 +232,7 @@ ancDex=0;
 ancCon=0;
 ancInt=0;
 ancWis=0;
-    ancCha=1;
+ancCha=1;
   }else if (selectedRace === 'tiefling'){
     // Disable subrace dropdown for races without subraces
     subraceDropdown.setAttribute('disabled', 'disabled');
@@ -248,7 +278,8 @@ ancCha=0;
   document.getElementById("int-anc").textContent = "+" + ancInt;
   document.getElementById("wis-anc").textContent = "+" + ancWis;
   document.getElementById("cha-anc").textContent = "+" + ancCha;
-  
+  updateTotal();
+
 
   ////////////////////for mod column
 
@@ -369,6 +400,7 @@ document.getElementById("int-anc").textContent =   "+" + ancInt;
 document.getElementById("wis-anc").textContent =   "+" + ancWis;
 
 document.getElementById("cha-anc").textContent =   "+" + ancCha;
+updateTotal();
 
 ///////////for mod column
 let attributes = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
