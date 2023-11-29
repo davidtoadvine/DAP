@@ -74,7 +74,6 @@ for (let i = 0; i < attributes.length; i++) {
     cost.innerHTML = 9;
   }
   total += parseInt(cost.innerText);
-  console.log(total);
   document.getElementById('total-cost').innerText = total + "/27";
 }}
 

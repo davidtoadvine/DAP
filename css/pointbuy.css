@@ -1,7 +1,7 @@
 body {
 
   text-align: right;
-
+  color:antiquewhite;
 }
 
 h1 {
@@ -15,7 +15,6 @@ h1 {
   color: yellow;
 }
 .container {
-  /* background-color: gray; */
   display: block;
   min-width: 40rem;
   text-align: left;
@@ -60,7 +59,7 @@ th {
 table {
   text-align: center;
   font-size: x-large;
-
+  color: #212529;
   background-image: url('../images/parchment.jpg');
   border-radius: 1rem;
   margin-left: 3rem;

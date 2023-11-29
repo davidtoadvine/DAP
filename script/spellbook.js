@@ -47,8 +47,6 @@ async function fetchClassSpells(className) {
 
 //populating the spell dropdown menu
 function populateDropdown(spellNames) {
-  console.log("populating with spell names")
-  console.log(spellNames.length);
   const spellSelect = document.getElementById('spell-select');
   // Clear existing options
   spellSelect.innerHTML = '';

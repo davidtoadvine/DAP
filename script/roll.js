@@ -31,8 +31,6 @@ var rollButton = document.getElementById('roll-button');
 //Rolls dice and calls print function
 rollButton.onclick = function () {
   dice.count = document.getElementById('quantity').value;
-  console.log(document.getElementById('quantity').value);
-
   var result = dice.roll();
   printNumber(result);
 };
