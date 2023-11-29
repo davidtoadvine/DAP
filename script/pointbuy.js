@@ -6,11 +6,10 @@ function updateTotal(){
 console.log(fieldName);
 var input = $("input[name='" + fieldName + "']");
 var currentVal = parseInt(input.val());
-console.log(currentVal)
 
-  let target = document.getElementById(`total-score-${attributes[i]}`);
-  console.log(target+ "target");
+let target = document.getElementById(`total-score-${attributes[i]}`);
   
+
   target.textContent = parseInt(document.getElementById(`${attributes[i]}-anc`).innerText )+ currentVal;
   }
   }
@@ -75,7 +74,6 @@ $(`.btn-number${i}`).click(function (e) {
   }
   ;
 
-  currentVal = parseInt(input.val());
   updateTotal();
 
 });
@@ -272,12 +270,12 @@ ancCha=0;
         ancCha=0;
           }
 
-  document.getElementById("str-anc").textContent = "+" + ancStr;
-  document.getElementById("dex-anc").textContent = "+" + ancDex;
-  document.getElementById("con-anc").textContent = "+" + ancCon;
-  document.getElementById("int-anc").textContent = "+" + ancInt;
-  document.getElementById("wis-anc").textContent = "+" + ancWis;
-  document.getElementById("cha-anc").textContent = "+" + ancCha;
+  document.getElementById("str-anc").textContent = ancStr;
+  document.getElementById("dex-anc").textContent = ancDex;
+  document.getElementById("con-anc").textContent = ancCon;
+  document.getElementById("int-anc").textContent = ancInt;
+  document.getElementById("wis-anc").textContent = ancWis;
+  document.getElementById("cha-anc").textContent = ancCha;
   updateTotal();
 
 
@@ -293,7 +291,13 @@ ancCha=0;
     let ancScore = vars[i];
     let sum = parseInt(ancScore) + baseValue;
     
-      mod.innerHTML = Math.floor((sum-10)/2);}
+    let finalMod =  Math.floor((sum-10)/2);
+    if (finalMod >=0){
+      mod.innerHTML = "+" + finalMod;
+      }
+    else{
+      mod.innerHTML = "-" + finalMod;
+    }}
 
   
 });
@@ -390,16 +394,16 @@ ancWis=0;
 ancCha=1;
   }
 
-  document.getElementById("str-anc").textContent = "+" + ancStr;
+  document.getElementById("str-anc").textContent = ancStr;
   
-document.getElementById("dex-anc").textContent = "+" + ancDex;
-document.getElementById("con-anc").textContent =   "+" + ancCon;
+document.getElementById("dex-anc").textContent = ancDex;
+document.getElementById("con-anc").textContent =   ancCon;
 
-document.getElementById("int-anc").textContent =   "+" + ancInt;
+document.getElementById("int-anc").textContent =   ancInt;
 
-document.getElementById("wis-anc").textContent =   "+" + ancWis;
+document.getElementById("wis-anc").textContent =   ancWis;
 
-document.getElementById("cha-anc").textContent =   "+" + ancCha;
+document.getElementById("cha-anc").textContent =   ancCha;
 updateTotal();
 
 ///////////for mod column
@@ -414,7 +418,13 @@ for (let i = 0; i < attributes.length; i++) {
   let ancScore = vars[i];
   let sum = parseInt(ancScore) + baseValue;
   
-    mod.innerHTML = Math.floor((sum-10)/2);}
+  let finalMod =  Math.floor((sum-10)/2);
+  if (finalMod >=0){
+    mod.innerHTML = "+" + finalMod;
+    }
+  else{
+    mod.innerHTML = "-" + finalMod;
+  }}
 })
 
 ///////////////////// MODIFIER COLUMN/////////////////////////////////////////////////
@@ -445,7 +455,14 @@ let vars = [ancStr,ancDex,ancCon,ancInt,ancWis,ancCha];
 let ancScore = vars[i];
 let sum = parseInt(ancScore) + baseValue;
 
-  mod.innerHTML = Math.floor((sum-10)/2);
+
+let finalMod =  Math.floor((sum-10)/2);
+if (finalMod >=0){
+  mod.innerHTML = "+" + finalMod;
+  }
+else{
+  mod.innerHTML = "-" + finalMod;
+}
 
 
 
@@ -468,7 +485,13 @@ minus.onclick= function () {
   let input = vars[i];
 let sum = parseInt(input)+ baseValue;
 
-  mod.innerHTML = Math.floor((sum-10)/2);
+let finalMod =  Math.floor((sum-10)/2);
+if (finalMod >=0){
+  mod.innerHTML = "+" + finalMod;
+  }
+else{
+  mod.innerHTML = "-" + finalMod;
+}
   
   
   
