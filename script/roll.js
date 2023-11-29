@@ -21,7 +21,6 @@ let dice = {
 
 
 //Prints dice roll to the page
-
 function printNumber(number) {
   var placeholder = document.getElementById('placeholder');
   placeholder.innerHTML = number;
@@ -29,6 +28,7 @@ function printNumber(number) {
 
 var rollButton = document.getElementById('roll-button');
 
+//Rolls dice and calls print function
 rollButton.onclick = function () {
   dice.count = document.getElementById('quantity').value;
   console.log(document.getElementById('quantity').value);
@@ -37,7 +37,7 @@ rollButton.onclick = function () {
   printNumber(result);
 };
 
-
+// Styles selected buttons
 function buttonHighlight(clicked) {
 
   let number = document.getElementById("placeholder");
@@ -45,18 +45,16 @@ function buttonHighlight(clicked) {
 
   let buttons = document.getElementsByClassName("btn-secondary");
 
-  console.log(buttons);
-
   for (i = 0; i < buttons.length; i++) {
     buttons[i].style.backgroundColor = 'rgb(26, 26, 167)';
   }
   clicked.style.backgroundColor = 'red';
-
-
 }
 
 var rollButton = document.getElementById('roll-button');
 
+
+// Handling die size selection
 var d4 = document.getElementById('d4');
 d4.onclick = function () {
   dice.sides = 4;
@@ -96,7 +94,7 @@ d100.onclick = function () {
 
 
 
-
+// Functionality for buttons that increment or decrement die number
 $('.btn-number').click(function (e) {
   e.preventDefault();
 
@@ -106,12 +104,7 @@ $('.btn-number').click(function (e) {
   var currentVal = parseInt(input.val());
   if (!isNaN(currentVal)) {
 
-
-
-
-
-    if (type == 'minus') {
-
+    if (type == 'minus') { // for minus button
       if (currentVal > input.attr('min')) {
         input.val(currentVal - 1).change();
         dice.count = currentVal - 1;
@@ -119,11 +112,9 @@ $('.btn-number').click(function (e) {
       }
       if (parseInt(input.val()) == input.attr('min')) {
         $(this).attr('disabled', true);
-
       }
 
-    } else if (type == 'plus') {
-
+    } else if (type == 'plus') { // for plus button
       if (currentVal < input.attr('max')) {
         input.val(currentVal + 1).change();
         dice.count = currentVal + 1;
@@ -131,7 +122,6 @@ $('.btn-number').click(function (e) {
       }
       if (parseInt(input.val()) == input.attr('max')) {
         $(this).attr('disabled', true);
-
       }
 
     }
@@ -139,11 +129,15 @@ $('.btn-number').click(function (e) {
     input.val(0);
   }
 });
+
+//This is for adjusting the number of dice through the form
+
 $('.input-number').focusin(function () {
   $(this).data('oldValue', $(this).val());
 });
-$('.input-number').change(function () {
 
+
+$('.input-number').change(function () {
   minValue = parseInt($(this).attr('min'));
   maxValue = parseInt($(this).attr('max'));
   valueCurrent = parseInt($(this).val());
@@ -152,7 +146,6 @@ $('.input-number').change(function () {
   if (valueCurrent >= minValue) {
     $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
     dice.count = valueCurrent;
-    // rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
   } else {
     alert('Sorry, the minimum value was reached');
     $(this).val(1);
@@ -161,7 +154,6 @@ $('.input-number').change(function () {
   if (valueCurrent <= maxValue && valueCurrent > 0) {
     $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
     dice.count = valueCurrent;
-    // rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides; 
   }
   else if (valueCurrent <= maxValue) {
     $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
@@ -176,6 +168,7 @@ $('.input-number').change(function () {
   rollButton.innerHTML = "Roll " + dice.count + "d" + dice.sides;
 
 });
+
 $(".input-number").keydown(function (e) {
   // Allow: backspace, delete, tab, escape, enter and .
   if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||

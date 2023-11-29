@@ -63,35 +63,26 @@
       </div>
     </nav>
   </header>
-
   <main>
     <div class="container">
-    <h1>Point Buy Calculator</h1>
-
-    
-    <select id="anc-select" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-
-  <option value="0" selected>Choose ancestry</option>
-  <option value="dwarf">Dwarf</option>
-  <option value="elf">Elf</option>
-  <option value="halfling">Halfling</option>
-  <option value="human">Human</option>
-  <option value="dragonborn">Dragonborn</option>
-  <option value="gnome">Gnome</option>
-  <option value="half-elf">Half-Elf</option>
-  <option value="half-orc">Half-Orc</option>
-  <option value="tiefling">Tiefling</option>
-
-    </select>
-
-
-    <label for="subrace">Choose a subrace:</label>
-<select id="subrace" name="subrace" disabled>
-  <option value="" selected>Select a race first</option>
-</select>
-
-  </div>
-
+      <h1>Point Buy Calculator</h1>
+      <select id="anc-select" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option value="0" selected>Choose ancestry</option>
+        <option value="dwarf">Dwarf</option>
+        <option value="elf">Elf</option>
+        <option value="halfling">Halfling</option>
+        <option value="human">Human</option>
+        <option value="dragonborn">Dragonborn</option>
+        <option value="gnome">Gnome</option>
+        <option value="half-elf">Half-Elf</option>
+        <option value="half-orc">Half-Orc</option>
+        <option value="tiefling">Tiefling</option>
+      </select>
+      <label for="subrace">Choose a subrace:</label>
+      <select id="subrace" name="subrace" disabled>
+        <option value="" selected>Select a race first</option>
+      </select>
+    </div>
     <div id="table-container">
       <table>
         <thead>
@@ -99,25 +90,20 @@
             <th>Ability</th>
             <th>Ancestry</th>
             <th id="score-header">Base Score</th>
-            
-            
             <th>Total</th>
             <th>Modifier</th>
-<th>Cost</th>
+            <th>Cost</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>
               <label for="quantity-str">STR</label>
-              
             </td>
-            <td id = "str-anc">
+            <td id="str-anc">
               0
             </td>
             <td>
-            
-
               <div class="input-group">
                 <span class="input-group-btn">
                   <button id="str-minus" type="button" class="btn btn-danger btn-number1" data-type="minus"
@@ -126,8 +112,8 @@
                   </button>
                 </span>
                 <form class="form" id="str-form">
-                  <input type="number" id="quantity-str" name="input-count1" class="form-control input-number1" value="10"
-                    min="8" max="15">
+                  <input type="number" id="quantity-str" name="input-count1" class="form-control input-number1"
+                    value="10" min="8" max="15">
                 </form>
                 <span class="input-group-btn">
                   <button id="str-plus" type="button" class="btn btn-success btn-number1" data-type="plus"
@@ -137,56 +123,43 @@
                 </span>
               </div>
             </td>
-          
             <td id="total-score-str">10</td>
             <td id="str-mod">+0</td>
             <td id="str-cost">2</td>
-          
-          
-          
-          
-          
-          
-          
           </tr>
           <tr>
             <td>
               <label for="quantity-dex">DEX</label>
-
             </td>
             <td id="dex-anc">0</td>
             <td>
               <div class="input-group">
                 <span class="input-group-btn">
-                  <button id = "dex-minus" type="button" class="btn btn-danger btn-number2" data-type="minus" data-field="input-count2">
+                  <button id="dex-minus" type="button" class="btn btn-danger btn-number2" data-type="minus"
+                    data-field="input-count2">
                     <span class="glyphicon glyphicon-minus"> - </span>
                   </button>
                 </span>
                 <form class="form" id="dex-form">
-                  <input type="number" id="quantity-dex" name="input-count2" class="form-control input-number2" value="10"
-                    min="8" max="15">
+                  <input type="number" id="quantity-dex" name="input-count2" class="form-control input-number2"
+                    value="10" min="8" max="15">
                 </form>
                 <span class="input-group-btn">
-                  <button id = "dex-plus"type="button" class="btn btn-success btn-number2" data-type="plus" data-field="input-count2">
+                  <button id="dex-plus" type="button" class="btn btn-success btn-number2" data-type="plus"
+                    data-field="input-count2">
                     <span class="glyphicon glyphicon-plus"> + </span>
                   </button>
                 </span>
               </div>
             </td>
-            
+
             <td id="total-score-dex">10</td>
             <td id="dex-mod">+0</td>
             <td id="dex-cost">2</td>
-            
-            
-            
-            
-            
           </tr>
           <tr>
             <td>
               <label for="quantity-con">CON</label>
-
             </td>
             <td id="con-anc">
               0
@@ -194,59 +167,48 @@
             <td>
               <div class="input-group">
                 <span class="input-group-btn">
-                  <button id="con-minus" type="button" class="btn btn-danger btn-number3" data-type="minus" data-field="input-count3">
+                  <button id="con-minus" type="button" class="btn btn-danger btn-number3" data-type="minus"
+                    data-field="input-count3">
                     <span con glyphicon-minus"> - </span>
                   </button>
                 </span>
                 <form class="form" id="con-form">
-                  <input type="number" id="quantity-con" name="input-count3" class="form-control input-number3" value="10"
-                    min="8" max="15">
+                  <input type="number" id="quantity-con" name="input-count3" class="form-control input-number3"
+                    value="10" min="8" max="15">
                 </form>
                 <span class="input-group-btn">
-                  <button  id = "con-plus" type="button" class="btn btn-success btn-number3" data-type="plus" data-field="input-count3">
+                  <button id="con-plus" type="button" class="btn btn-success btn-number3" data-type="plus"
+                    data-field="input-count3">
                     <span class="glyphicon glyphicon-plus"> + </span>
                   </button>
                 </span>
               </div>
             </td>
-        
             <td id="total-score-con">10</td>
             <td id="con-mod">+0</td>
             <td id="con-cost">2</td>
-        
-        
-        
-      
-      
-      
-      
-      
-        
-
-        
-
-          
           <tr>
             <td>
               <label for="quantity-int">INT</label>
-
             </td>
-            <td id = "int-anc">
+            <td id="int-anc">
               0
             </td>
             <td>
               <div class="input-group">
                 <span class="input-group-btn">
-                  <button id = "int-minus" type="button" class="btn btn-danger btn-number4" data-type="minus" data-field="input-count4">
+                  <button id="int-minus" type="button" class="btn btn-danger btn-number4" data-type="minus"
+                    data-field="input-count4">
                     <span class="glyphicon glyphicon-minus"> - </span>
                   </button>
                 </span>
                 <form class="form" id="int-form">
-                  <input type="number" id="quantity-int" name="input-count4" class="form-control input-number4" value="10"
-                    min="8" max="15">
+                  <input type="number" id="quantity-int" name="input-count4" class="form-control input-number4"
+                    value="10" min="8" max="15">
                 </form>
                 <span class="input-group-btn">
-                  <button id = "int-plus" type="button" class="btn btn-success btn-number4" data-type="plus" data-field="input-count4">
+                  <button id="int-plus" type="button" class="btn btn-success btn-number4" data-type="plus"
+                    data-field="input-count4">
                     <span class="glyphicon glyphicon-plus"> + </span>
                   </button>
                 </span>
@@ -255,29 +217,29 @@
             <td id="total-score-int">10</td>
             <td id="int-mod">+0</td>
             <td id="int-cost">2</td>
-
           </tr>
           <tr>
             <td>
               <label for="quantity-wis">WIS</label>
-
             </td>
-            <td id ="wis-anc">
+            <td id="wis-anc">
               0
             </td>
             <td>
               <div class="input-group">
                 <span class="input-group-btn">
-                  <button id = "wis-minus" type="button" class="btn btn-danger btn-number5" data-type="minus" data-field="input-count5">
+                  <button id="wis-minus" type="button" class="btn btn-danger btn-number5" data-type="minus"
+                    data-field="input-count5">
                     <span class="glyphicon glyphicon-minus"> - </span>
                   </button>
                 </span>
                 <form class="form" id="wis-form">
-                  <input type="number" id="quantity-wis" name="input-count5" class="form-control input-number5" value="10"
-                    min="8" max="15">
+                  <input type="number" id="quantity-wis" name="input-count5" class="form-control input-number5"
+                    value="10" min="8" max="15">
                 </form>
                 <span class="input-group-btn">
-                  <button id = "wis-plus" type="button" class="btn btn-success btn-number5" data-type="plus" data-field="input-count5">
+                  <button id="wis-plus" type="button" class="btn btn-success btn-number5" data-type="plus"
+                    data-field="input-count5">
                     <span class="glyphicon glyphicon-plus"> + </span>
                   </button>
                 </span>
@@ -286,29 +248,29 @@
             <td id="total-score-wis">10</td>
             <td id="wis-mod">+0</td>
             <td id="wis-cost">2</td>
-
           </tr>
           <tr>
             <td>
               <label for="quantity-cha">CHA</label>
-
             </td>
-            <td id = "cha-anc">
+            <td id="cha-anc">
               0
             </td>
             <td>
               <div class="input-group">
                 <span class="input-group-btn">
-                  <button id = "cha-minus" type="button" class="btn btn-danger btn-number6" data-type="minus" data-field="input-count6">
+                  <button id="cha-minus" type="button" class="btn btn-danger btn-number6" data-type="minus"
+                    data-field="input-count6">
                     <span class="glyphicon glyphicon-minus"> - </span>
                   </button>
                 </span>
                 <form class="form" id="cha-form">
-                  <input type="number" id="quantity-cha" name="input-count6" class="form-control input-number6" value="10"
-                    min="8" max="15">
+                  <input type="number" id="quantity-cha" name="input-count6" class="form-control input-number6"
+                    value="10" min="8" max="15">
                 </form>
                 <span class="input-group-btn">
-                  <button id = "cha-plus" type="button" class="btn btn-success btn-number6" data-type="plus" data-field="input-count6">
+                  <button id="cha-plus" type="button" class="btn btn-success btn-number6" data-type="plus"
+                    data-field="input-count6">
                     <span class="glyphicon glyphicon-plus"> + </span>
                   </button>
                 </span>
@@ -317,51 +279,32 @@
             <td id="total-score-cha">10</td>
             <td id="cha-mod">+0</td>
             <td id="cha-cost">2</td>
-
           </tr>
-
-
-
-<tr>
-  <td>
-  </td>
-  <td>
-    
-  </td>
-  <td>
-  </td>
-  <td>
-    Spent = 
-  </td>
-  <td id="total-cost">
-    12/27
-  </td>
-  <td></td>
-</tr>
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+          <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td></td>
+            <td>
+              Spent = </td>
+            </td>
+            </td>
+            <td id="total-cost">
+              12/27
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
   </main>
-  
   <script src="./script/pointbuy.js">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-</body>
+</body>>
 
 </html>

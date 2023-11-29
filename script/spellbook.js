@@ -23,6 +23,7 @@ async function fetchAllSpells() {
 fetchAllSpells();
 
 
+
 // narrowing spells based on class input
 async function fetchClassSpells(className) {
   try {
@@ -78,15 +79,15 @@ function populateDropdown(spellNames) {
     spellSelect.add(defaultOption);
 
     // Add spell names to the dropdown
-   
-   
+
+
 
     spellNames.forEach((spellName) => {
 
       const option = document.createElement('option');
       option.text = spellName;
       spellSelect.add(option);
-   
+
     });
   }
 }
