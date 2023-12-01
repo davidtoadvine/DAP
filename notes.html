@@ -74,12 +74,14 @@
 
       </div>
     </div>
-
+<!-- <button type="button" class="btn btn-light">Light</button> -->
     <div class="container">
       <h1>Notes</h1>
-      <button class="note-btn"> Create Note </button>
+      <button class="note-btn">Create Note</button>
       <button id="blob-btn" class="note-btn">Export Blob</button>
-      <button id="delete-all-btn" class="note-btn"> Delete All Notes </button>
+      <input type="file" id="file-input" accept=".json" style="display: none;">
+      <label for="file-input" class="custom-file-upload btn-light">Import Blob</label>
+            <button id="delete-all-btn" class="note-btn"> Delete All Notes </button>
       <div class="notes-container">
       </div>
     </div>

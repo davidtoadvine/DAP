@@ -1,32 +1,25 @@
-
 const notesContainer = document.querySelector(".notes-container");
 const createButton = document.querySelector(".note-btn");
 const deleteAllButton = document.getElementById("delete-all-btn");
 const deleteAllConfirm = document.getElementById("delete-all-confirm");
-
+const blobExportButton = document.getElementById("blob-btn");
+const fileInput = document.getElementById("file-input");
 
 let notes = document.querySelectorAll(".input-box");
 
-
-// Get the button and popup elements
 const openDeleteButton = document.getElementById('delete-all-btn');
 const closeDeleteButton = document.getElementById('closePopupButton');
 const deleteOverlay = document.getElementById('popupOverlay');
 
-//display current notes
 function showNotes() {
   notesContainer.innerHTML = localStorage.getItem("notes");
 }
 showNotes();
 
-
-//For delete button
-// Show the popup when the button is clicked
 openDeleteButton.addEventListener('click', () => {
   deleteOverlay.style.display = 'flex';
 });
 
-// Close the popup when the close button is clicked
 closeDeleteButton.addEventListener('click', () => {
   deleteOverlay.style.display = 'none';
 });
@@ -35,36 +28,31 @@ deleteAllConfirm.addEventListener("click", () => {
   deleteOverlay.style.display = 'none';
   localStorage.clear();
   showNotes();
-})
+});
 
-// Adds notes as they are typed
 function updateStorage() {
-  localStorage.setItem("notes", notesContainer.innerHTML);
+  localStorage.setItem("notes", JSON.stringify(Array.from(notesContainer.children).map(note => ({ content: note.textContent.trim() }))));
 }
-createButton.addEventListener("click", (e) => {
+function createNote() {
   let inputBox = document.createElement("h2");
   let img = document.createElement("img");
   inputBox.className = "input-box";
   inputBox.setAttribute("contenteditable", "true");
-  //this works but isn't perfect
   inputBox.innerHTML = '&nbsp';
 
   notesContainer.appendChild(inputBox);
   img.src = "./images/trash.png";
-  img.alt = "Delete note"
+  img.alt = "Delete note";
   inputBox.appendChild(img);
-});
+  updateStorage();
+}
 
-
-// Deletes a notes
 notesContainer.addEventListener("click", function (e) {
   if (e.target.tagName === "IMG") {
-    ///delete image
     e.target.parentElement.remove();
     updateStorage();
   }
   else if (e.target.tagName === "H2") {
-
     notes = document.querySelectorAll(".input-box");
     notes.forEach(note => {
       note.onkeyup = function () {
@@ -74,52 +62,47 @@ notesContainer.addEventListener("click", function (e) {
   }
 });
 
+blobExportButton.addEventListener("click", () => {
+  var notesArray = Array.from(notesContainer.children).map(note => ({ content: note.textContent.trim() }));
+  var jsonData = JSON.stringify(notesArray);
+  var blob = new Blob([jsonData], { type: 'application/json' });
+  var downloadLink = document.createElement('a');
+  downloadLink.download = 'exported_data.json';
+  downloadLink.href = window.URL.createObjectURL(blob);0
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+});
 
+fileInput.addEventListener("change", function (event) {
+  var fileInput = event.target;
 
-// Blob download functionality
-document.getElementById("blob-btn").addEventListener("click", () => {
-  // Step 1: Retrieve data from localStorage
-  var localStorageData = localStorage.getItem('notes'); // Replace 'notes' with the actual key you used to store data
-
-  // Check if data exists in localStorage
-  if (localStorageData) {
-    // Step 2: Convert data into a format suitable for a Blob (e.g., JSON string)
-    var jsonData = JSON.stringify(localStorageData);
-
-    // Step 3: Create a Blob from the formatted data
-    var blob = new Blob([jsonData], { type: 'application/json' });
-
-    // Step 4: Create a link element
-    var downloadLink = document.createElement('a');
-
-    // Step 5: Set the download link attributes
-    downloadLink.download = 'exported_data.json';
-    downloadLink.href = window.URL.createObjectURL(blob);
-
-    // Step 6: Append the link to the body
-    document.body.appendChild(downloadLink);
-
-    // Step 7: Trigger a click on the link to start the download
-    downloadLink.click();
-
-    // Step 8: Remove the link from the body
-    document.body.removeChild(downloadLink);
-  } else {
-    console.log('No data found in localStorage for the specified key.');
+  if (fileInput.files.length > 0) {
+    var file = fileInput.files[0];
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var jsonContent = e.target.result;
+      populatePageWithJSON(jsonContent);
+    };
+    reader.readAsText(file);
   }
 });
 
+function populatePageWithJSON(jsonContent) {
+  var notesArray = JSON.parse(jsonContent);
 
+  notesContainer.innerHTML = '';
 
+  notesArray.forEach(note => {
+    let inputBox = document.createElement("h2");
+    let img = document.createElement("img");
+    inputBox.className = "input-box";
+    inputBox.setAttribute("contenteditable", "true");
+    inputBox.innerHTML = note.content;
+    notesContainer.appendChild(inputBox);
+    img.src = "./images/trash.png";
+    img.alt = "Delete note";
+    inputBox.appendChild(img);
+  });}
 
-
-
-
-
-
-
-
-
-
-
-
+  document.getElementById("note-btn").onclick(createNote());

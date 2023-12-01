@@ -37,6 +37,12 @@
 #delete-all-confirm{
   float:right;
 }
+.custom-file-upload{
+  color:black;
+  background-color:#f8f9fadc;
+  padding: 3px;
+  border-radius: 3px;
+}
 
 p {
   word-wrap: break-word;
