@@ -14,7 +14,12 @@ const deleteOverlay = document.getElementById('popupOverlay');
 
 //display notes that are stored
 function showNotes() {
+  console.log("showing notes")
+
+  //this is just showing json, not creating elements
   notesContainer.innerHTML = localStorage.getItem("notes");
+  ///////////////////////////////////////////////
+  populatePageWithJSON(localStorage.getItem("notes"))
 }
 showNotes();
 
@@ -92,6 +97,7 @@ fileInput.addEventListener("change", function (event) {
     reader.onload = function (e) {
       var jsonContent = e.target.result;
       populatePageWithJSON(jsonContent);
+      console.log(jsonContent);
     };
     reader.readAsText(file);
   }
@@ -112,7 +118,8 @@ function populatePageWithJSON(jsonContent) {
     notesContainer.appendChild(inputBox);
     img.src = "./images/trash.png";
     img.alt = "Delete note";
-    inputBox.appendChild(img);
+    inputBox.appendChild(img); //////////////
+    updateStorage();
   });}
 
 
