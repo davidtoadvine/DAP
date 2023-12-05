@@ -105,4 +105,8 @@ function populatePageWithJSON(jsonContent) {
     inputBox.appendChild(img);
   });}
 
-  document.getElementById("note-btn").onclick(createNote());
+  let makeNote = document.getElementById("make-note-btn"); //onclick(createNote());
+
+  makeNote.addEventListener("click", ()=>{
+    createNote();
+  });
