@@ -11,11 +11,14 @@ const openDeleteButton = document.getElementById('delete-all-btn');
 const closeDeleteButton = document.getElementById('closePopupButton');
 const deleteOverlay = document.getElementById('popupOverlay');
 
+
+//display notes that are stored
 function showNotes() {
   notesContainer.innerHTML = localStorage.getItem("notes");
 }
 showNotes();
 
+//event listeners for deletion process buttons
 openDeleteButton.addEventListener('click', () => {
   deleteOverlay.style.display = 'flex';
 });
@@ -30,9 +33,12 @@ deleteAllConfirm.addEventListener("click", () => {
   showNotes();
 });
 
+//updates note storage 
 function updateStorage() {
   localStorage.setItem("notes", JSON.stringify(Array.from(notesContainer.children).map(note => ({ content: note.textContent.trim() }))));
 }
+
+//creates a new note box
 function createNote() {
   let inputBox = document.createElement("h2");
   let img = document.createElement("img");
@@ -47,6 +53,7 @@ function createNote() {
   updateStorage();
 }
 
+//updates stores when notes are removed or typed in
 notesContainer.addEventListener("click", function (e) {
   if (e.target.tagName === "IMG") {
     e.target.parentElement.remove();
@@ -62,6 +69,7 @@ notesContainer.addEventListener("click", function (e) {
   }
 });
 
+//exports JSON blob when button is clicked
 blobExportButton.addEventListener("click", () => {
   var notesArray = Array.from(notesContainer.children).map(note => ({ content: note.textContent.trim() }));
   var jsonData = JSON.stringify(notesArray);
@@ -74,6 +82,7 @@ blobExportButton.addEventListener("click", () => {
   document.body.removeChild(downloadLink);
 });
 
+//allowing for upload of JSON file
 fileInput.addEventListener("change", function (event) {
   var fileInput = event.target;
 
@@ -88,6 +97,7 @@ fileInput.addEventListener("change", function (event) {
   }
 });
 
+//populates page with uploaded JSON data
 function populatePageWithJSON(jsonContent) {
   var notesArray = JSON.parse(jsonContent);
 
@@ -105,7 +115,9 @@ function populatePageWithJSON(jsonContent) {
     inputBox.appendChild(img);
   });}
 
-  let makeNote = document.getElementById("make-note-btn"); //onclick(createNote());
+
+  //functionality for creating new notes
+  let makeNote = document.getElementById("make-note-btn");
 
   makeNote.addEventListener("click", ()=>{
     createNote();

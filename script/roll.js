@@ -15,10 +15,7 @@ let dice = {
     }
     return sum;
   }
-
 }
-
-
 
 //Prints dice roll to the page
 function printNumber(number) {
@@ -89,7 +86,6 @@ d100.onclick = function () {
   buttonHighlight(d100);
   rollButton.innerHTML = "Roll " + dice.count + "d100";
 };
-
 
 
 // Functionality for buttons that increment or decrement die number
